@@ -10,25 +10,56 @@
 
 
 #import "ViewController.h"
+#import "GameViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
-
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property CALayer *bottomLine;
+@property (weak, nonatomic) IBOutlet UIButton *launchBtn;
 
 @end
 
-@implementation ViewController
+@implementation ViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.inputTextField.delegate = self;
+    
+    _bottomLine = [CALayer layer];
+    _bottomLine.frame = CGRectMake(0.0f, _inputTextField.frame.size.height - 1, _inputTextField.frame.size.width, 1.0f);
+    _bottomLine.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4].CGColor;
+    [_inputTextField setBorderStyle:UITextBorderStyleNone];
+    [_inputTextField.layer addSublayer:_bottomLine];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [UIView animateWithDuration:1.0f
+                          delay:0
+                        options:UIViewAnimationOptionRepeat
+                     animations:^{ self.launchBtn.transform = CGAffineTransformMakeScale(1.5, 1.5);}
+                     completion: NULL];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    self.bottomLine.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0].CGColor;
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    self.bottomLine.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4].CGColor;
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.inputTextField resignFirstResponder];
+    return NO;
+}
 
 @end

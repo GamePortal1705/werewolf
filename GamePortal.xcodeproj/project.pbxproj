@@ -18,6 +18,7 @@
 		CAFE3D4C1E7DB36B0066F527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFE3D4A1E7DB36B0066F527 /* LaunchScreen.storyboard */; };
 		CAFE3D571E7DB36B0066F527 /* GamePortalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D561E7DB36B0066F527 /* GamePortalTests.m */; };
 		CAFE3D621E7DB36B0066F527 /* GamePortalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D611E7DB36B0066F527 /* GamePortalUITests.m */; };
+		CAFE3D711E7DC2DF0066F527 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D701E7DC2DF0066F527 /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		CAFE3D5D1E7DB36B0066F527 /* GamePortalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamePortalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFE3D611E7DB36B0066F527 /* GamePortalUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamePortalUITests.m; sourceTree = "<group>"; };
 		CAFE3D631E7DB36B0066F527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFE3D6F1E7DC2DF0066F527 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		CAFE3D701E7DC2DF0066F527 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		F12D63A354579F2CBAE6AD4D /* libPods-GamePortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GamePortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2DD08CD6A9DE9D8FDF5F6A6 /* libPods-GamePortalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GamePortalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +144,8 @@
 		CAFE3D3B1E7DB36B0066F527 /* GamePortal */ = {
 			isa = PBXGroup;
 			children = (
+				CAFE3D6F1E7DC2DF0066F527 /* GameViewController.h */,
+				CAFE3D701E7DC2DF0066F527 /* GameViewController.m */,
 				CAFE3D3F1E7DB36B0066F527 /* AppDelegate.h */,
 				CAFE3D401E7DB36B0066F527 /* AppDelegate.m */,
 				CAFE3D421E7DB36B0066F527 /* ViewController.h */,
@@ -463,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFE3D711E7DC2DF0066F527 /* GameViewController.m in Sources */,
 				CAFE3D441E7DB36B0066F527 /* ViewController.m in Sources */,
 				CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */,
 				CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */,
@@ -709,6 +715,7 @@
 				CAFE3D681E7DB36B0066F527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAFE3D691E7DB36B0066F527 /* Build configuration list for PBXNativeTarget "GamePortalTests" */ = {
 			isa = XCConfigurationList;
@@ -717,6 +724,7 @@
 				CAFE3D6B1E7DB36B0066F527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAFE3D6C1E7DB36B0066F527 /* Build configuration list for PBXNativeTarget "GamePortalUITests" */ = {
 			isa = XCConfigurationList;
@@ -725,6 +733,7 @@
 				CAFE3D6E1E7DB36B0066F527 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
