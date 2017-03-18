@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CA6C40686D0AFE91B3A45C434ACBCC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		50F7ADE478B924BD8710E1840758A548 /* Pods-GamePortal-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D875B1424F2C217F56C67937A45DEFB7 /* Pods-GamePortal-dummy.m */; };
+		620C0D64EEFDE9F39FCB268C06E72156 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		74E2A9722EC173A1647991EC30B50FD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		B7854EC8C28A049CE06BA8C4FFC62E35 /* Pods-GamePortalUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F2DD9387E5FED009107D45149ECBD /* Pods-GamePortalUITests-dummy.m */; };
+		C64257467814BF624430E1993C2BF350 /* Pods-GamePortalTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6BA98F41D6153D12496315ADF730A17 /* Pods-GamePortalTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E3BB15F04EBAA023EE1360F4765D0E5 /* Pods-GamePortal-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GamePortal-frameworks.sh"; sourceTree = "<group>"; };
+		146BAAF7CF11D18FB70081186B01C0B1 /* Pods-GamePortalUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GamePortalUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		25A2A8240D57CE5715AB03B134822C1E /* Pods-GamePortal-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GamePortal-resources.sh"; sourceTree = "<group>"; };
+		27BD18FA9BDC4E4F3001782C09594C61 /* Pods-GamePortalTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GamePortalTests-resources.sh"; sourceTree = "<group>"; };
+		29462FBFBA3D68EA17FE72F10AAAC1CB /* Pods-GamePortalTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GamePortalTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		2E4343D9989F5652A75E89492B2BB109 /* Pods-GamePortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GamePortalTests.release.xcconfig"; sourceTree = "<group>"; };
+		30D329DED735BC1BEDB9FCEAED677E12 /* Pods-GamePortal-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GamePortal-acknowledgements.plist"; sourceTree = "<group>"; };
+		3D8889B281C5E286706BCDD23641D573 /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
+		3D8B5E29D505C590B0EF7B028000384F /* Pods-GamePortalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GamePortalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		447627641A44AB9EFD1E36D891DC355B /* Pods-GamePortalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GamePortalTests.debug.xcconfig"; sourceTree = "<group>"; };
+		495E2757B54523018B88B60E3C3D3386 /* Pods-GamePortalUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GamePortalUITests-frameworks.sh"; sourceTree = "<group>"; };
+		648D819A17F4C16A37C94650A6E9E767 /* libPods-GamePortalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GamePortalUITests.a"; path = "libPods-GamePortalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E261D4EF68B74B6138A9AF5A2ABBCC2 /* Pods-GamePortalTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GamePortalTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6FEAB5018A1DB8E51827A674A16411DA /* Pods-GamePortal-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GamePortal-acknowledgements.markdown"; sourceTree = "<group>"; };
+		830AC14F8A6C1D0741FD7A38A96682C4 /* Pods-GamePortalUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GamePortalUITests-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C537CD92DD728A311A58E07801A709C7 /* libPods-GamePortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GamePortal.a"; path = "libPods-GamePortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5DD74D473EA8054E68B9A2E644C5A6E /* Pods-GamePortalTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GamePortalTests-frameworks.sh"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CD84DD62DC7408CC807BA29D6F886786 /* Pods-GamePortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GamePortal.debug.xcconfig"; sourceTree = "<group>"; };
+		D16B61699DCD8CD6A978A4879EC00DF3 /* Pods-GamePortalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GamePortalUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D4BA5F94812DA2B70281782C8C526F8B /* libPods-GamePortalTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GamePortalTests.a"; path = "libPods-GamePortalTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D875B1424F2C217F56C67937A45DEFB7 /* Pods-GamePortal-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GamePortal-dummy.m"; sourceTree = "<group>"; };
+		E03B7DBF8E4E53E9F237689988BB6BEE /* Pods-GamePortalUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GamePortalUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E48F2DD9387E5FED009107D45149ECBD /* Pods-GamePortalUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GamePortalUITests-dummy.m"; sourceTree = "<group>"; };
+		E7208E4D2922C817282DD22C921B4ACA /* Pods-GamePortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GamePortal.release.xcconfig"; sourceTree = "<group>"; };
+		F6BA98F41D6153D12496315ADF730A17 /* Pods-GamePortalTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GamePortalTests-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A1DCCF38B3B339830D2E926A23EAF50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				620C0D64EEFDE9F39FCB268C06E72156 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A923E865DA039EA6E8EF8F9867413CC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74E2A9722EC173A1647991EC30B50FD3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D72C024687698D5AC7440DBCCC3490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA6C40686D0AFE91B3A45C434ACBCC8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F776DB1FD0C2C76CA7E6F170DDEBFD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D8889B281C5E286706BCDD23641D573 /* Quickblox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4020775CA2AB57AD5241FEE650AAE09D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C537CD92DD728A311A58E07801A709C7 /* libPods-GamePortal.a */,
+				D4BA5F94812DA2B70281782C8C526F8B /* libPods-GamePortalTests.a */,
+				648D819A17F4C16A37C94650A6E9E767 /* libPods-GamePortalUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		580B6355E0FB52F1B5D7115899E31B84 /* Pods-GamePortalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				146BAAF7CF11D18FB70081186B01C0B1 /* Pods-GamePortalUITests-acknowledgements.markdown */,
+				E03B7DBF8E4E53E9F237689988BB6BEE /* Pods-GamePortalUITests-acknowledgements.plist */,
+				E48F2DD9387E5FED009107D45149ECBD /* Pods-GamePortalUITests-dummy.m */,
+				495E2757B54523018B88B60E3C3D3386 /* Pods-GamePortalUITests-frameworks.sh */,
+				830AC14F8A6C1D0741FD7A38A96682C4 /* Pods-GamePortalUITests-resources.sh */,
+				3D8B5E29D505C590B0EF7B028000384F /* Pods-GamePortalUITests.debug.xcconfig */,
+				D16B61699DCD8CD6A978A4879EC00DF3 /* Pods-GamePortalUITests.release.xcconfig */,
+			);
+			name = "Pods-GamePortalUITests";
+			path = "Target Support Files/Pods-GamePortalUITests";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CCE34C55EBCCF38D4538D5DAB761DABD /* Pods */,
+				4020775CA2AB57AD5241FEE650AAE09D /* Products */,
+				9C83646345D4215B77726D9B688870D1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9C83646345D4215B77726D9B688870D1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D71C1C922B66E62442C9CDF46A3E8E09 /* Pods-GamePortal */,
+				FD1B6F08C94FAB624E8D3BBCCC22397D /* Pods-GamePortalTests */,
+				580B6355E0FB52F1B5D7115899E31B84 /* Pods-GamePortalUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C07235D972E768E85315CE1523103FC0 /* QuickBlox */ = {
+			isa = PBXGroup;
+			children = (
+				0F776DB1FD0C2C76CA7E6F170DDEBFD5 /* Frameworks */,
+			);
+			name = QuickBlox;
+			path = QuickBlox;
+			sourceTree = "<group>";
+		};
+		CCE34C55EBCCF38D4538D5DAB761DABD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C07235D972E768E85315CE1523103FC0 /* QuickBlox */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D71C1C922B66E62442C9CDF46A3E8E09 /* Pods-GamePortal */ = {
+			isa = PBXGroup;
+			children = (
+				6FEAB5018A1DB8E51827A674A16411DA /* Pods-GamePortal-acknowledgements.markdown */,
+				30D329DED735BC1BEDB9FCEAED677E12 /* Pods-GamePortal-acknowledgements.plist */,
+				D875B1424F2C217F56C67937A45DEFB7 /* Pods-GamePortal-dummy.m */,
+				0E3BB15F04EBAA023EE1360F4765D0E5 /* Pods-GamePortal-frameworks.sh */,
+				25A2A8240D57CE5715AB03B134822C1E /* Pods-GamePortal-resources.sh */,
+				CD84DD62DC7408CC807BA29D6F886786 /* Pods-GamePortal.debug.xcconfig */,
+				E7208E4D2922C817282DD22C921B4ACA /* Pods-GamePortal.release.xcconfig */,
+			);
+			name = "Pods-GamePortal";
+			path = "Target Support Files/Pods-GamePortal";
+			sourceTree = "<group>";
+		};
+		FD1B6F08C94FAB624E8D3BBCCC22397D /* Pods-GamePortalTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E261D4EF68B74B6138A9AF5A2ABBCC2 /* Pods-GamePortalTests-acknowledgements.markdown */,
+				29462FBFBA3D68EA17FE72F10AAAC1CB /* Pods-GamePortalTests-acknowledgements.plist */,
+				F6BA98F41D6153D12496315ADF730A17 /* Pods-GamePortalTests-dummy.m */,
+				C5DD74D473EA8054E68B9A2E644C5A6E /* Pods-GamePortalTests-frameworks.sh */,
+				27BD18FA9BDC4E4F3001782C09594C61 /* Pods-GamePortalTests-resources.sh */,
+				447627641A44AB9EFD1E36D891DC355B /* Pods-GamePortalTests.debug.xcconfig */,
+				2E4343D9989F5652A75E89492B2BB109 /* Pods-GamePortalTests.release.xcconfig */,
+			);
+			name = "Pods-GamePortalTests";
+			path = "Target Support Files/Pods-GamePortalTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23170BB4E199DF2FC912C2262FA4B20D /* Pods-GamePortalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F93B03E9C5B165C283008304550CA902 /* Build configuration list for PBXNativeTarget "Pods-GamePortalUITests" */;
+			buildPhases = (
+				EA0DDAB6F0825EA1FE6881AFE7F33ADD /* Sources */,
+				A923E865DA039EA6E8EF8F9867413CC1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GamePortalUITests";
+			productName = "Pods-GamePortalUITests";
+			productReference = 648D819A17F4C16A37C94650A6E9E767 /* libPods-GamePortalUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3D7A4948991600BBA18F7A235A4EDECF /* Pods-GamePortal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E804912D6636B3784B9696251AECA4C2 /* Build configuration list for PBXNativeTarget "Pods-GamePortal" */;
+			buildPhases = (
+				BBA6025EB7499E65FDABACB0DFAB8E58 /* Sources */,
+				7A1DCCF38B3B339830D2E926A23EAF50 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GamePortal";
+			productName = "Pods-GamePortal";
+			productReference = C537CD92DD728A311A58E07801A709C7 /* libPods-GamePortal.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		732A59B635C7B6F1B28CF78C119E2BFF /* Pods-GamePortalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 930A07037BFA9710B7532519298973A1 /* Build configuration list for PBXNativeTarget "Pods-GamePortalTests" */;
+			buildPhases = (
+				40F3B579F44208ED1855A271A6E3642A /* Sources */,
+				D8D72C024687698D5AC7440DBCCC3490 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-GamePortalTests";
+			productName = "Pods-GamePortalTests";
+			productReference = D4BA5F94812DA2B70281782C8C526F8B /* libPods-GamePortalTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4020775CA2AB57AD5241FEE650AAE09D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D7A4948991600BBA18F7A235A4EDECF /* Pods-GamePortal */,
+				732A59B635C7B6F1B28CF78C119E2BFF /* Pods-GamePortalTests */,
+				23170BB4E199DF2FC912C2262FA4B20D /* Pods-GamePortalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40F3B579F44208ED1855A271A6E3642A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C64257467814BF624430E1993C2BF350 /* Pods-GamePortalTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA6025EB7499E65FDABACB0DFAB8E58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F7ADE478B924BD8710E1840758A548 /* Pods-GamePortal-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA0DDAB6F0825EA1FE6881AFE7F33ADD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7854EC8C28A049CE06BA8C4FFC62E35 /* Pods-GamePortalUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0C1BD9DA23F5FCE13DB1B73B1381D3C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD84DD62DC7408CC807BA29D6F886786 /* Pods-GamePortal.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2D89D368A1F110460458562671DF41DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7208E4D2922C817282DD22C921B4ACA /* Pods-GamePortal.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		440CD2D39027D390B42AE51D851A8BEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D8B5E29D505C590B0EF7B028000384F /* Pods-GamePortalUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5CDA778052FFC01E6110B45F96D41EB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 447627641A44AB9EFD1E36D891DC355B /* Pods-GamePortalTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C09030AC3F4508DA6D91A405DC8D19B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E4343D9989F5652A75E89492B2BB109 /* Pods-GamePortalTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F4F3418B3E448A41CAAE6E0BEE32D461 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D16B61699DCD8CD6A978A4879EC00DF3 /* Pods-GamePortalUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		930A07037BFA9710B7532519298973A1 /* Build configuration list for PBXNativeTarget "Pods-GamePortalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CDA778052FFC01E6110B45F96D41EB8 /* Debug */,
+				C09030AC3F4508DA6D91A405DC8D19B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E804912D6636B3784B9696251AECA4C2 /* Build configuration list for PBXNativeTarget "Pods-GamePortal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C1BD9DA23F5FCE13DB1B73B1381D3C2 /* Debug */,
+				2D89D368A1F110460458562671DF41DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F93B03E9C5B165C283008304550CA902 /* Build configuration list for PBXNativeTarget "Pods-GamePortalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				440CD2D39027D390B42AE51D851A8BEF /* Debug */,
+				F4F3418B3E448A41CAAE6E0BEE32D461 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
