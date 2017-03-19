@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69AD3397FA93A7CC87E91E37 /* libPods-GamePortal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12D63A354579F2CBAE6AD4D /* libPods-GamePortal.a */; };
-		A3CEEB2AA0DBEFE660D6F813 /* libPods-GamePortalTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55075612B34153A58F8B689E /* libPods-GamePortalTests.a */; };
-		A91A5EC4A3A2D918E653C382 /* libPods-GamePortalUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DD08CD6A9DE9D8FDF5F6A6 /* libPods-GamePortalUITests.a */; };
+		1E331612EED2407624E4D384 /* Pods_GamePortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9335ACB42D5D2AF44A15A74 /* Pods_GamePortal.framework */; };
+		2949FFCF299CAB2218606C14 /* Pods_GamePortalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578752C207AC710B8C09EE6B /* Pods_GamePortalUITests.framework */; };
 		CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D3D1E7DB36B0066F527 /* main.m */; };
 		CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D401E7DB36B0066F527 /* AppDelegate.m */; };
 		CAFE3D441E7DB36B0066F527 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D431E7DB36B0066F527 /* ViewController.m */; };
@@ -19,6 +18,7 @@
 		CAFE3D571E7DB36B0066F527 /* GamePortalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D561E7DB36B0066F527 /* GamePortalTests.m */; };
 		CAFE3D621E7DB36B0066F527 /* GamePortalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D611E7DB36B0066F527 /* GamePortalUITests.m */; };
 		CAFE3D711E7DC2DF0066F527 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D701E7DC2DF0066F527 /* GameViewController.m */; };
+		D3B7464629CE67F5A6980FD7 /* Pods_GamePortalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FCD7881248E9C9C9DC1D6C /* Pods_GamePortalTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +43,11 @@
 		207C42985390D1FB5AEB9A39 /* Pods-GamePortalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortalTests/Pods-GamePortalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B196087158554F1E101DE79 /* Pods-GamePortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortal.release.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortal/Pods-GamePortal.release.xcconfig"; sourceTree = "<group>"; };
 		486AC970C7A953CEECDA81AC /* Pods-GamePortalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortalUITests/Pods-GamePortalUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		55075612B34153A58F8B689E /* libPods-GamePortalTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GamePortalTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		578752C207AC710B8C09EE6B /* Pods_GamePortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58FCD7881248E9C9C9DC1D6C /* Pods_GamePortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		773F868CC633FDC5FA065F8E /* Pods-GamePortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortalTests/Pods-GamePortalTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6B5E691B81D1349BACBB4ED /* Pods-GamePortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortal/Pods-GamePortal.debug.xcconfig"; sourceTree = "<group>"; };
+		C9335ACB42D5D2AF44A15A74 /* Pods_GamePortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFE3D391E7DB36B0066F527 /* GamePortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFE3D3D1E7DB36B0066F527 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAFE3D3F1E7DB36B0066F527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,8 +66,6 @@
 		CAFE3D631E7DB36B0066F527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAFE3D6F1E7DC2DF0066F527 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		CAFE3D701E7DC2DF0066F527 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		F12D63A354579F2CBAE6AD4D /* libPods-GamePortal.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GamePortal.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2DD08CD6A9DE9D8FDF5F6A6 /* libPods-GamePortalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GamePortalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69AD3397FA93A7CC87E91E37 /* libPods-GamePortal.a in Frameworks */,
+				1E331612EED2407624E4D384 /* Pods_GamePortal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3CEEB2AA0DBEFE660D6F813 /* libPods-GamePortalTests.a in Frameworks */,
+				D3B7464629CE67F5A6980FD7 /* Pods_GamePortalTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91A5EC4A3A2D918E653C382 /* libPods-GamePortalUITests.a in Frameworks */,
+				2949FFCF299CAB2218606C14 /* Pods_GamePortalUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,9 +112,9 @@
 		92E9C7EF22B962B5944F99BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F12D63A354579F2CBAE6AD4D /* libPods-GamePortal.a */,
-				55075612B34153A58F8B689E /* libPods-GamePortalTests.a */,
-				F2DD08CD6A9DE9D8FDF5F6A6 /* libPods-GamePortalUITests.a */,
+				C9335ACB42D5D2AF44A15A74 /* Pods_GamePortal.framework */,
+				58FCD7881248E9C9C9DC1D6C /* Pods_GamePortalTests.framework */,
+				578752C207AC710B8C09EE6B /* Pods_GamePortalUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

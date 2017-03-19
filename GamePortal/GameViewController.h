@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SocketIO;
 
 typedef enum {
     kSystemStage,

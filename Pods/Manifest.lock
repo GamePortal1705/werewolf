@@ -1,12 +1,15 @@
 PODS:
   - QuickBlox (2.6.6)
+  - Socket.IO-Client-Swift (8.3.0)
 
 DEPENDENCIES:
   - QuickBlox
+  - Socket.IO-Client-Swift (~> 8.3.0)
 
 SPEC CHECKSUMS:
   QuickBlox: 8a860f96d8d4694f9d35fbeac9bbb5bc09ed71ec
+  Socket.IO-Client-Swift: 7ad3aded3c0f74d99555e950ac3aa82ca3eefbaf
 
-PODFILE CHECKSUM: 4bc1dd982575d8e9a376a5cc21692148ab39aea6
+PODFILE CHECKSUM: 3bb040d558d79861cdd74b8f27a9069f13340308
 
 COCOAPODS: 1.2.0

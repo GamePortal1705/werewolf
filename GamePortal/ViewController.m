@@ -62,6 +62,8 @@
     return NO;
 }
 
+// segue: passing argument
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"launchgame"]) {
         GameViewController *gvc = (GameViewController *)segue.destinationViewController;

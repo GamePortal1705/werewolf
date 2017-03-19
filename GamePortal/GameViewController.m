@@ -10,6 +10,8 @@
 
 @interface GameViewController ()
 
+@property SocketIOClient *socket;
+
 @end
 
 @implementation GameViewController
@@ -21,6 +23,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    NSURL* url = [[NSURL alloc] initWithString:@"http://10.128.11.147:9092"];
+    _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"forcePolling": @YES}];
+    
+    [_socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"socket connected");
+    }];
+    
+    [_socket connect];
 }
 
 - (void)didReceiveMemoryWarning {

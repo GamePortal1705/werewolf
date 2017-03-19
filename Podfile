@@ -2,9 +2,11 @@
 # platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 # use_frameworks!
+use_frameworks!
 
 target 'GamePortal' do
 pod 'QuickBlox'
+pod 'Socket.IO-Client-Swift', '~> 8.3.0' # Or latest version
 end
 
 target 'GamePortalTests' do
