@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -64,7 +63,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3tW-Tg-23J" kind="show" id="dPb-R1-J1L"/>
+                                    <segue destination="3tW-Tg-23J" kind="show" identifier="launchgame" id="dPb-R1-J1L"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,6 +94,7 @@
                         <outlet property="inputTextField" destination="r3v-cg-uXl" id="9II-Kr-60u"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1399.2" y="-190.25487256371815"/>
         </scene>

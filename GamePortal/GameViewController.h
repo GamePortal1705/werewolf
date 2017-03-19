@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    kSystemStage,
+    kOtherPlayerStage,
+    kMyStage
+} Stage;
+
 @interface GameViewController : UIViewController
+
+@property NSString *username;
+@property Stage stage;
 
 @end
