@@ -67,7 +67,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"launchgame"]) {
         GameViewController *gvc = (GameViewController *)segue.destinationViewController;
-        [gvc setStage:kSystemStage];
+        [gvc setStage:kInitial];
         [gvc setUsername:@"jack"];
     }
 }

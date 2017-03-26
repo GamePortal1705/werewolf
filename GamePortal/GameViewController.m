@@ -11,6 +11,7 @@
 @interface GameViewController ()
 
 @property SocketIOClient *socket;
+@property (weak, nonatomic) IBOutlet UIScrollView *msgView;
 
 @end
 
@@ -18,24 +19,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSURL* url = [[NSURL alloc] initWithString:@"http://localhost:3000"];
+    _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"forcePolling": @YES}];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSURL* url = [[NSURL alloc] initWithString:@"http://10.128.11.147:9092"];
-    _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"forcePolling": @YES}];
-    
-    [_socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        NSLog(@"socket connected");
-    }];
-    
+    [self setupSocket];
     [_socket connect];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)setupSocket {
+    /* client try to connect to server */
+    [_socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"socket connected");
+        [self setStage:kConnectionEstablished];
+        OnAckCallback *callback = [_socket emitWithAck:@"joinGame" with:@[@{@"username":@"hong"}]];
+        [callback timingOutAfter:5.0 callback:^(NSArray* data) {
+            /* join game call back do nothing */
+        }];
+    }];
+    
+    [_socket on:@"onDispatchRole" callback:^(NSArray * data, SocketAckEmitter * ack) {
+        // user got its rule, game is starting.
+        [self setStage:kGameStart];
+        self.msgView.backgroundColor = [UIColor redColor];
+    }];
+    
+    [_socket on:@"night" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        // get the current night's sequnce number
+    }];
 }
 
 /*

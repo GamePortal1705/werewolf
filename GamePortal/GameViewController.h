@@ -10,9 +10,12 @@
 @import SocketIO;
 
 typedef enum {
-    kSystemStage,
-    kOtherPlayerStage,
-    kMyStage
+    kInitial,
+    kConnectionEstablished,
+    kGameStart,
+    kNight,
+    kVote,
+    kStatement
 } Stage;
 
 @interface GameViewController : UIViewController
