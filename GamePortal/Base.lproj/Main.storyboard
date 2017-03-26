@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="height" constant="50" id="3tP-aY-9wT"/>
                                     <constraint firstAttribute="width" constant="50" id="t85-xA-vsT"/>
                                 </constraints>
-                                <state key="normal" image="wolf"/>
+                                <state key="normal" image="hong"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owL-iS-Akk">
                                 <rect key="frame" x="309" y="124" width="50" height="50"/>
@@ -173,7 +173,7 @@
                                     <constraint firstAttribute="height" constant="202" id="9aL-0k-S7g"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TRs-LK-lZ4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCell" id="TRs-LK-lZ4" customClass="GPMsgTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TRs-LK-lZ4" id="dwB-yP-WH9">
@@ -182,6 +182,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System msg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-pH-h0G">
                                                     <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                                    <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -194,9 +195,18 @@
                                                 <constraint firstItem="asJ-pH-h0G" firstAttribute="top" secondItem="dwB-yP-WH9" secondAttribute="topMargin" id="Ke0-wW-QZr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="msg" destination="asJ-pH-h0G" id="C6q-ek-ERW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wem-yl-uPa">
+                                <rect key="frame" x="145" y="35" width="85" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -220,12 +230,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avBox1" destination="ZjN-iV-PPE" id="8yh-xp-HQm"/>
+                        <outlet property="avBox2" destination="Heh-fg-5TO" id="lOP-wy-awH"/>
+                        <outlet property="avBox3" destination="aU9-f6-lSa" id="8ht-Zh-3ib"/>
+                        <outlet property="avBox4" destination="owL-iS-Akk" id="1YJ-6W-Nu0"/>
+                        <outlet property="avBox5" destination="Ovy-DW-Fjr" id="9K7-is-WCm"/>
+                        <outlet property="avBox6" destination="puN-jU-kuN" id="RBs-Gg-ZPc"/>
                         <outlet property="msgTableView" destination="GCx-BJ-Pn6" id="TNn-Bk-Uhf"/>
+                        <outlet property="timerLabel" destination="wem-yl-uPa" id="zRR-LX-l4p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7u-ch-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642.39999999999998" y="-190.25487256371815"/>
+            <point key="canvasLocation" x="-578" y="-224"/>
         </scene>
     </scenes>
     <resources>
@@ -234,9 +251,9 @@
         <image name="clogo" width="1072" height="436"/>
         <image name="david" width="160" height="160"/>
         <image name="download" width="251" height="201"/>
+        <image name="hong" width="1420" height="1396"/>
         <image name="logo" width="855" height="530"/>
         <image name="renkai" width="400" height="400"/>
-        <image name="wolf" width="640" height="623"/>
         <image name="xiong_siyadong" width="602" height="602"/>
     </resources>
 </document>
