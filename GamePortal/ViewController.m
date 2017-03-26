@@ -68,7 +68,7 @@
     if ([segue.identifier isEqualToString:@"launchgame"]) {
         GameViewController *gvc = (GameViewController *)segue.destinationViewController;
         [gvc setStage:kInitial];
-        [gvc setUsername:@"jack"];
+        [gvc setUsername:self.inputTextField.text];
     }
 }
 
