@@ -117,6 +117,9 @@
                                     <constraint firstAttribute="width" constant="50" id="t85-xA-vsT"/>
                                 </constraints>
                                 <state key="normal" image="hong"/>
+                                <connections>
+                                    <action selector="makeVoteDecision:" destination="3tW-Tg-23J" eventType="touchUpInside" id="iq0-Ax-8hH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owL-iS-Akk">
                                 <rect key="frame" x="309" y="124" width="50" height="50"/>
@@ -127,6 +130,9 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dmz-Qp-riT"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="xiong_siyadong"/>
+                                <connections>
+                                    <action selector="makeVoteDecision:" destination="3tW-Tg-23J" eventType="touchUpInside" id="6NL-P5-Nz5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovy-DW-Fjr">
                                 <rect key="frame" x="309" y="198" width="50" height="50"/>
@@ -137,6 +143,9 @@
                                     <constraint firstAttribute="height" constant="50" id="tVJ-R3-LHp"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="download"/>
+                                <connections>
+                                    <action selector="makeVoteDecision:" destination="3tW-Tg-23J" eventType="touchUpInside" id="CmQ-9i-Yfh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heh-fg-5TO">
                                 <rect key="frame" x="16" y="198" width="50" height="50"/>
@@ -145,6 +154,9 @@
                                     <constraint firstAttribute="height" constant="50" id="dnk-MY-VHJ"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="renkai"/>
+                                <connections>
+                                    <action selector="makeVoteDecision:" destination="3tW-Tg-23J" eventType="touchUpInside" id="Rhi-O9-UmE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aU9-f6-lSa">
                                 <rect key="frame" x="16" y="272" width="50" height="50"/>
@@ -155,6 +167,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="wDM-x4-4sE"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Maximillian_Kaye_SUMMER2017_photo"/>
+                                <connections>
+                                    <action selector="makeVoteDecision:" destination="3tW-Tg-23J" eventType="touchUpInside" id="IvN-f1-5ZZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puN-jU-kuN">
                                 <rect key="frame" x="309" y="272" width="50" height="50"/>
@@ -165,29 +180,34 @@
                                     <constraint firstAttribute="height" constant="50" id="qk3-se-riV"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="david"/>
+                                <connections>
+                                    <action selector="makeVoteDecision:" destination="3tW-Tg-23J" eventType="touchUpInside" id="YWe-Ek-XcR"/>
+                                </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GCx-BJ-Pn6">
+                            <tableView clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GCx-BJ-Pn6">
                                 <rect key="frame" x="0.0" y="465" width="375" height="202"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="202" id="9aL-0k-S7g"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCell" id="TRs-LK-lZ4" customClass="GPMsgTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCell" rowHeight="47" id="TRs-LK-lZ4" customClass="GPMsgTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TRs-LK-lZ4" id="dwB-yP-WH9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System msg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asJ-pH-h0G">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="asJ-pH-h0G" firstAttribute="leading" secondItem="dwB-yP-WH9" secondAttribute="leadingMargin" id="7KH-uY-5cU"/>
                                                 <constraint firstItem="asJ-pH-h0G" firstAttribute="trailing" secondItem="dwB-yP-WH9" secondAttribute="trailingMargin" id="AAV-Ge-oV2"/>
@@ -195,6 +215,7 @@
                                                 <constraint firstItem="asJ-pH-h0G" firstAttribute="top" secondItem="dwB-yP-WH9" secondAttribute="topMargin" id="Ke0-wW-QZr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="msg" destination="asJ-pH-h0G" id="C6q-ek-ERW"/>
                                         </connections>
@@ -242,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7u-ch-dAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-578" y="-224"/>
+            <point key="canvasLocation" x="-511.19999999999999" y="-249.62518740629687"/>
         </scene>
     </scenes>
     <resources>

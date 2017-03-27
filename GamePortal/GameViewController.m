@@ -35,10 +35,9 @@
     self.msgTableView.dataSource = self;
     self.msgTableView.separatorColor = [UIColor clearColor];
     NSURL* url = [[NSURL alloc] initWithString:@"http://localhost:3000"];
-    _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @YES, @"forcePolling": @YES}];
+    _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @NO, @"forcePolling": @YES}];
     _msgArray = [[NSMutableArray alloc] init];
-    _avBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4,
-               _avBox5, _avBox6, nil];
+    _avBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -95,6 +94,9 @@
     [_socket on:@"vote" callback:^(NSArray* data, SocketAckEmitter* ack) {
         _stage = kVote;
         [self buttonClickEnable];
+        NSString *votehint = @"Vote begins, please choose one player in 60 secs";
+        [_msgArray addObject:votehint];
+        [self.msgTableView reloadData];
     }];
 }
 
@@ -116,8 +118,15 @@
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:_startDateTime];
     NSInteger interval= 60 - timeInterval;
     [self.timerLabel setText:[[NSString alloc] initWithFormat:@"%2ld", (long)interval]];
+    if (interval == 0) {
+        [_timer invalidate];
+        _timerLabel.hidden = YES;
+    }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.msgArray count];
@@ -135,7 +144,23 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.msg.text = [self.msgArray objectAtIndex:indexPath.row];
+    cell.msg.adjustsFontSizeToFitWidth = YES;
     return cell;
+}
+
+- (IBAction)makeVoteDecision:(id)sender {
+    int index = 0;
+    for (UIButton *tmp in self.avBoxs) {
+        if (sender == tmp)
+            NSLog(@"%d", index);
+        index++;
+    }
+    // socket emit kill msg
+    // disable button interaction & invalid timer
+    for (UIButton *tmp in self.avBoxs)
+        tmp.userInteractionEnabled = NO;
+    [_timer invalidate];
+    _timerLabel.hidden = YES;
 }
 
 /*
