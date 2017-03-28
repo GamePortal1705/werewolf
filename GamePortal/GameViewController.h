@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 @import SocketIO;
 
 typedef enum {
@@ -25,4 +26,11 @@ typedef enum {
 @property NSString *sessionId;
 @property NSString *role;
 @property long playerId;
+
+//Video chat
+
+@property (copy, nonatomic) NSString *roomName;
+@property (assign, nonatomic) AgoraRtcClientRole clientRole;
+@property (assign, nonatomic) AgoraRtcVideoProfile videoProfile;
+
 @end

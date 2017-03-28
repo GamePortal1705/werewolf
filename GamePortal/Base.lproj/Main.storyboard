@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -110,6 +110,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMp-J5-2UU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjN-iV-PPE">
                                 <rect key="frame" x="16" y="124" width="50" height="50"/>
                                 <constraints>
@@ -182,6 +187,14 @@
                                 <state key="normal" title="Button" image="david"/>
                                 <connections>
                                     <action selector="makeVoteDecision:" destination="3tW-Tg-23J" eventType="touchUpInside" id="YWe-Ek-XcR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-vk-yPa">
+                                <rect key="frame" x="122" y="379" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enhance Button"/>
+                                <connections>
+                                    <action selector="doEnhancerPressed:" destination="3tW-Tg-23J" eventType="touchUpInside" id="bzc-Vm-4JB"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GCx-BJ-Pn6">
@@ -257,7 +270,9 @@
                         <outlet property="avBox4" destination="owL-iS-Akk" id="1YJ-6W-Nu0"/>
                         <outlet property="avBox5" destination="Ovy-DW-Fjr" id="9K7-is-WCm"/>
                         <outlet property="avBox6" destination="puN-jU-kuN" id="RBs-Gg-ZPc"/>
+                        <outlet property="enhancerButton" destination="V2G-vk-yPa" id="B5b-Wj-coq"/>
                         <outlet property="msgTableView" destination="GCx-BJ-Pn6" id="TNn-Bk-Uhf"/>
+                        <outlet property="remoteContainerView" destination="iMp-J5-2UU" id="pp9-80-yPb"/>
                         <outlet property="timerLabel" destination="wem-yl-uPa" id="zRR-LX-l4p"/>
                     </connections>
                 </viewController>

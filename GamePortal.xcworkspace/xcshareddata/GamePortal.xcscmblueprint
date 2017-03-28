@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F48AD85EC59B24DF5D66B0F0A726843CD4F0AC4F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F48AD85EC59B24DF5D66B0F0A726843CD4F0AC4F" : 9223372036854775807,
+    "9CAB7AD76E09A517AC9B6335A76815EB35225CA2" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DC694EF2-EF60-436D-97F3-24AB62B1FA8C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F48AD85EC59B24DF5D66B0F0A726843CD4F0AC4F" : "werewolf\/",
+    "9CAB7AD76E09A517AC9B6335A76815EB35225CA2" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GamePortal",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GamePortal.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dydcfg\/iOS_in_Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9CAB7AD76E09A517AC9B6335A76815EB35225CA2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GamePortal1705\/werewolf.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F48AD85EC59B24DF5D66B0F0A726843CD4F0AC4F"
+    }
+  ]
+}

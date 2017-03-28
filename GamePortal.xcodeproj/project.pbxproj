@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		1E331612EED2407624E4D384 /* Pods_GamePortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9335ACB42D5D2AF44A15A74 /* Pods_GamePortal.framework */; };
 		2949FFCF299CAB2218606C14 /* Pods_GamePortalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 578752C207AC710B8C09EE6B /* Pods_GamePortalUITests.framework */; };
+		515878B81E8B092C0049CECC /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878B61E8B092C0049CECC /* AgoraRtcEngineKit.framework */; };
+		515878B91E8B092C0049CECC /* videoprp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878B71E8B092C0049CECC /* videoprp.framework */; };
+		515878BB1E8B09950049CECC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 515878BA1E8B09950049CECC /* Info.plist */; };
+		515878BD1E8B0B110049CECC /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878BC1E8B0B110049CECC /* libc++.1.tbd */; };
+		515878BF1E8B0B1C0049CECC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878BE1E8B0B1C0049CECC /* SystemConfiguration.framework */; };
+		515878C11E8B0B240049CECC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878C01E8B0B240049CECC /* CoreMotion.framework */; };
+		515878C31E8B0B2B0049CECC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878C21E8B0B2B0049CECC /* CoreTelephony.framework */; };
+		515878C51E8B0B340049CECC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878C41E8B0B340049CECC /* AVFoundation.framework */; };
+		515878C71E8B0B3C0049CECC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878C61E8B0B3C0049CECC /* CoreMedia.framework */; };
+		515878C91E8B0B430049CECC /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878C81E8B0B430049CECC /* VideoToolbox.framework */; };
+		515878CB1E8B0B4B0049CECC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515878CA1E8B0B4B0049CECC /* AudioToolbox.framework */; };
+		515878CE1E8B0B9D0049CECC /* KeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 515878CD1E8B0B9D0049CECC /* KeyCenter.m */; };
+		515878D11E8B10B40049CECC /* VideoSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 515878D01E8B10B40049CECC /* VideoSession.m */; };
+		515878D41E8B10C00049CECC /* VideoViewLayouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 515878D31E8B10C00049CECC /* VideoViewLayouter.m */; };
 		CAC254001E886E3A00CCABF9 /* GPMsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC253FF1E886E3A00CCABF9 /* GPMsgTableViewCell.m */; };
 		CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D3D1E7DB36B0066F527 /* main.m */; };
 		CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D401E7DB36B0066F527 /* AppDelegate.m */; };
@@ -44,6 +58,23 @@
 		207C42985390D1FB5AEB9A39 /* Pods-GamePortalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortalTests/Pods-GamePortalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B196087158554F1E101DE79 /* Pods-GamePortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortal.release.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortal/Pods-GamePortal.release.xcconfig"; sourceTree = "<group>"; };
 		486AC970C7A953CEECDA81AC /* Pods-GamePortalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortalUITests/Pods-GamePortalUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		515878B61E8B092C0049CECC /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
+		515878B71E8B092C0049CECC /* videoprp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = videoprp.framework; sourceTree = "<group>"; };
+		515878BA1E8B09950049CECC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		515878BC1E8B0B110049CECC /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		515878BE1E8B0B1C0049CECC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		515878C01E8B0B240049CECC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		515878C21E8B0B2B0049CECC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		515878C41E8B0B340049CECC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		515878C61E8B0B3C0049CECC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		515878C81E8B0B430049CECC /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		515878CA1E8B0B4B0049CECC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		515878CC1E8B0B9D0049CECC /* KeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyCenter.h; sourceTree = "<group>"; };
+		515878CD1E8B0B9D0049CECC /* KeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyCenter.m; sourceTree = "<group>"; };
+		515878CF1E8B10B40049CECC /* VideoSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSession.h; sourceTree = "<group>"; };
+		515878D01E8B10B40049CECC /* VideoSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoSession.m; sourceTree = "<group>"; };
+		515878D21E8B10C00049CECC /* VideoViewLayouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewLayouter.h; sourceTree = "<group>"; };
+		515878D31E8B10C00049CECC /* VideoViewLayouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewLayouter.m; sourceTree = "<group>"; };
 		578752C207AC710B8C09EE6B /* Pods_GamePortalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePortalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FCD7881248E9C9C9DC1D6C /* Pods_GamePortalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePortalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		773F868CC633FDC5FA065F8E /* Pods-GamePortalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamePortalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GamePortalTests/Pods-GamePortalTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,7 +91,6 @@
 		CAFE3D461E7DB36B0066F527 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAFE3D481E7DB36B0066F527 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAFE3D4B1E7DB36B0066F527 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CAFE3D4D1E7DB36B0066F527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAFE3D521E7DB36B0066F527 /* GamePortalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamePortalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFE3D561E7DB36B0066F527 /* GamePortalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamePortalTests.m; sourceTree = "<group>"; };
 		CAFE3D581E7DB36B0066F527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +106,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515878CB1E8B0B4B0049CECC /* AudioToolbox.framework in Frameworks */,
+				515878C91E8B0B430049CECC /* VideoToolbox.framework in Frameworks */,
+				515878C71E8B0B3C0049CECC /* CoreMedia.framework in Frameworks */,
+				515878C51E8B0B340049CECC /* AVFoundation.framework in Frameworks */,
+				515878C31E8B0B2B0049CECC /* CoreTelephony.framework in Frameworks */,
+				515878C11E8B0B240049CECC /* CoreMotion.framework in Frameworks */,
+				515878BF1E8B0B1C0049CECC /* SystemConfiguration.framework in Frameworks */,
+				515878BD1E8B0B110049CECC /* libc++.1.tbd in Frameworks */,
 				1E331612EED2407624E4D384 /* Pods_GamePortal.framework in Frameworks */,
+				515878B81E8B092C0049CECC /* AgoraRtcEngineKit.framework in Frameworks */,
+				515878B91E8B092C0049CECC /* videoprp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +155,14 @@
 		92E9C7EF22B962B5944F99BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				515878CA1E8B0B4B0049CECC /* AudioToolbox.framework */,
+				515878C81E8B0B430049CECC /* VideoToolbox.framework */,
+				515878C61E8B0B3C0049CECC /* CoreMedia.framework */,
+				515878C41E8B0B340049CECC /* AVFoundation.framework */,
+				515878C21E8B0B2B0049CECC /* CoreTelephony.framework */,
+				515878C01E8B0B240049CECC /* CoreMotion.framework */,
+				515878BE1E8B0B1C0049CECC /* SystemConfiguration.framework */,
+				515878BC1E8B0B110049CECC /* libc++.1.tbd */,
 				C9335ACB42D5D2AF44A15A74 /* Pods_GamePortal.framework */,
 				58FCD7881248E9C9C9DC1D6C /* Pods_GamePortalTests.framework */,
 				578752C207AC710B8C09EE6B /* Pods_GamePortalUITests.framework */,
@@ -147,6 +195,8 @@
 		CAFE3D3B1E7DB36B0066F527 /* GamePortal */ = {
 			isa = PBXGroup;
 			children = (
+				515878B61E8B092C0049CECC /* AgoraRtcEngineKit.framework */,
+				515878B71E8B092C0049CECC /* videoprp.framework */,
 				CAFE3D6F1E7DC2DF0066F527 /* GameViewController.h */,
 				CAFE3D701E7DC2DF0066F527 /* GameViewController.m */,
 				CAFE3D3F1E7DB36B0066F527 /* AppDelegate.h */,
@@ -154,12 +204,18 @@
 				CAFE3D421E7DB36B0066F527 /* ViewController.h */,
 				CAFE3D431E7DB36B0066F527 /* ViewController.m */,
 				CAFE3D451E7DB36B0066F527 /* Main.storyboard */,
+				515878BA1E8B09950049CECC /* Info.plist */,
 				CAFE3D481E7DB36B0066F527 /* Assets.xcassets */,
 				CAFE3D4A1E7DB36B0066F527 /* LaunchScreen.storyboard */,
-				CAFE3D4D1E7DB36B0066F527 /* Info.plist */,
 				CAFE3D3C1E7DB36B0066F527 /* Supporting Files */,
 				CAC253FE1E886E3A00CCABF9 /* GPMsgTableViewCell.h */,
 				CAC253FF1E886E3A00CCABF9 /* GPMsgTableViewCell.m */,
+				515878CC1E8B0B9D0049CECC /* KeyCenter.h */,
+				515878CD1E8B0B9D0049CECC /* KeyCenter.m */,
+				515878CF1E8B10B40049CECC /* VideoSession.h */,
+				515878D01E8B10B40049CECC /* VideoSession.m */,
+				515878D21E8B10C00049CECC /* VideoViewLayouter.h */,
+				515878D31E8B10C00049CECC /* VideoViewLayouter.m */,
 			);
 			path = GamePortal;
 			sourceTree = "<group>";
@@ -266,7 +322,7 @@
 				TargetAttributes = {
 					CAFE3D381E7DB36B0066F527 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = DXLGL27ZQ4;
+						DevelopmentTeam = 9CHRYF4L2L;
 						ProvisioningStyle = Automatic;
 					};
 					CAFE3D511E7DB36B0066F527 = {
@@ -308,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515878BB1E8B09950049CECC /* Info.plist in Resources */,
 				CAFE3D4C1E7DB36B0066F527 /* LaunchScreen.storyboard in Resources */,
 				CAFE3D491E7DB36B0066F527 /* Assets.xcassets in Resources */,
 				CAFE3D471E7DB36B0066F527 /* Main.storyboard in Resources */,
@@ -474,8 +531,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAC254001E886E3A00CCABF9 /* GPMsgTableViewCell.m in Sources */,
+				515878D11E8B10B40049CECC /* VideoSession.m in Sources */,
 				CAFE3D711E7DC2DF0066F527 /* GameViewController.m in Sources */,
+				515878CE1E8B0B9D0049CECC /* KeyCenter.m in Sources */,
 				CAFE3D441E7DB36B0066F527 /* ViewController.m in Sources */,
+				515878D41E8B10C00049CECC /* VideoViewLayouter.m in Sources */,
 				CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */,
 				CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */,
 			);
@@ -556,6 +616,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -604,6 +665,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -627,8 +689,13 @@
 			baseConfigurationReference = B6B5E691B81D1349BACBB4ED /* Pods-GamePortal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DXLGL27ZQ4;
+				DEVELOPMENT_TEAM = 9CHRYF4L2L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GamePortal",
+				);
 				INFOPLIST_FILE = GamePortal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hong.GamePortal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -640,8 +707,13 @@
 			baseConfigurationReference = 3B196087158554F1E101DE79 /* Pods-GamePortal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DXLGL27ZQ4;
+				DEVELOPMENT_TEAM = 9CHRYF4L2L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GamePortal",
+				);
 				INFOPLIST_FILE = GamePortal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Hong.GamePortal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
