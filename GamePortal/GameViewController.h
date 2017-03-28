@@ -22,5 +22,7 @@ typedef enum {
 
 @property NSString *username;
 @property Stage stage;
-
+@property NSString *sessionId;
+@property NSString *role;
+@property long playerId;
 @end

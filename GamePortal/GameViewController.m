@@ -64,29 +64,38 @@
     [_socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
         NSLog(@"socket connected");
         [self setStage:kConnectionEstablished];
-        OnAckCallback *callback = [_socket emitWithAck:@"joinGame" with:@[@{@"username": self.username}]];
+        OnAckCallback *callback = [_socket emitWithAck:@"joinGame" with:@[@{@"playerName": self.username}]];
         [callback timingOutAfter:5.0 callback:^(NSArray* data) {
             /* join game call back do nothing */
             NSLog(@"joinGame call back");
         }];
     }];
     
-    [_socket on:@"onDispatchRole" callback:^(NSArray * data, SocketAckEmitter * ack) {
+    // send Message contains ID, playerName, sessionID and DispatchRoleMsg
+    [_socket on:@"dispatchRole" callback:^(NSArray * data, SocketAckEmitter * ack) {
         /* user got its rule, game is starting. */
         [self setStage: kGameStart];
         /* get role information. */
         NSDictionary *rr = [data objectAtIndex:0];
-        NSLog(@"%@", rr[@"role"]);
+        _sessionId = rr[@"sessionId"];
+        _playerId = rr[@"id"];
     }];
     
     [_socket on:@"night" callback:^(NSArray* data, SocketAckEmitter* ack) {
         /* get the current night's sequnce number. */
         self.msgTableView.backgroundColor = [UIColor redColor];
+        NSString *msg1 = @"Night has come, please close your eyes.";
+        NSString *msg2 = @"Wolves please open your eyes, and choose one to kill.";
+        [_msgArray addObject: msg1];
+        [_msgArray addObject: msg2];
+        [_msgTableView reloadData];
     }];
     
-    [_socket on:@"msg" callback:^(NSArray* data, SocketAckEmitter* ack) {
+    // GamePortal Backend Server Event: systemInfo
+    [_socket on:@"systemInfo" callback:^(NSArray* data, SocketAckEmitter* ack) {
         /* receive system msg from server. */
-        NSString *str = [data objectAtIndex:0];
+        // message that contains ID valued -1 and data a system log string
+        NSString *str = [data objectAtIndex:0][@"data"];
         [_msgArray addObject: str];
         [_msgTableView reloadData];
     }];
