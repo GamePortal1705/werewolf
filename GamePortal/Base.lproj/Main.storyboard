@@ -115,6 +115,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Y5-aMU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjN-iV-PPE">
                                 <rect key="frame" x="16" y="124" width="50" height="50"/>
                                 <constraints>
@@ -270,6 +274,7 @@
                         <outlet property="avBox4" destination="owL-iS-Akk" id="1YJ-6W-Nu0"/>
                         <outlet property="avBox5" destination="Ovy-DW-Fjr" id="9K7-is-WCm"/>
                         <outlet property="avBox6" destination="puN-jU-kuN" id="RBs-Gg-ZPc"/>
+                        <outlet property="backgroundImageView" destination="KPr-Y5-aMU" id="Jzp-Wf-9lK"/>
                         <outlet property="enhancerButton" destination="V2G-vk-yPa" id="B5b-Wj-coq"/>
                         <outlet property="msgTableView" destination="GCx-BJ-Pn6" id="TNn-Bk-Uhf"/>
                         <outlet property="remoteContainerView" destination="iMp-J5-2UU" id="pp9-80-yPb"/>
@@ -283,6 +288,7 @@
     </scenes>
     <resources>
         <image name="Maximillian_Kaye_SUMMER2017_photo" width="303" height="300"/>
+        <image name="background1" width="750" height="1336"/>
         <image name="bg_load" width="900" height="1020"/>
         <image name="clogo" width="1072" height="436"/>
         <image name="david" width="160" height="160"/>

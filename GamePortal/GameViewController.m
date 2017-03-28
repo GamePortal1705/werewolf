@@ -15,6 +15,7 @@
 
 @interface GameViewController () <AgoraRtcEngineDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *enhancerButton;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @property (weak, nonatomic) IBOutlet UIView *remoteContainerView;
 @property (strong, nonatomic) SocketIOClient *socket;
@@ -70,6 +71,27 @@
     }
     return _agoraEnhancer;
 }
+
+- (void)startBroadCast{
+    self.clientRole = AgoraRtc_ClientRole_Broadcaster;
+    [self.rtcEngine setClientRole:self.clientRole withKey:nil];
+    [self updateInterfaceWithAnimation:YES];
+}
+
+- (void)stopBroadCast{
+    self.clientRole = AgoraRtc_ClientRole_Audience;
+    if (self.fullSession.uid == 0) {
+        self.fullSession = nil;
+    }
+    [self.rtcEngine setClientRole:self.clientRole withKey:nil];
+    [self updateInterfaceWithAnimation:YES];
+}
+
+- (void)replaceBackgroundImage{
+    [self.backgroundImageView setAlpha:1.0];
+}
+
+
 
 - (void)setClientRole:(AgoraRtcClientRole)clientRole {
     _clientRole = clientRole;
@@ -233,7 +255,7 @@
     
     [self addLocalSession];
     
-    /*
+    
      int code = [self.rtcEngine joinChannelByKey:nil channelName:self.roomName info:nil uid:0 joinSuccess:nil];
      if (code == 0) {
      [self setIdleTimerActive:NO];
@@ -246,15 +268,11 @@
      if (self.isBroadcaster) {
      self.shouldEnhancer = YES;
      }
-     */
 }
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed {
     VideoSession *userSession = [self videoSessionOfUid:uid];
     [self.rtcEngine setupRemoteVideo:userSession.canvas];
 }
-
-
-
 
 
 - (void)viewDidLoad {
