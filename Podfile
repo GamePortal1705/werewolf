@@ -7,6 +7,7 @@ use_frameworks!
 target 'GamePortal' do
 pod 'QuickBlox'
 pod 'Socket.IO-Client-Swift', '~> 8.3.0' # Or latest version
+pod 'pop', '~> 1.0'
 end
 
 target 'GamePortalTests' do
