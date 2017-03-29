@@ -24,6 +24,34 @@
 		515878D11E8B10B40049CECC /* VideoSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 515878D01E8B10B40049CECC /* VideoSession.m */; };
 		515878D41E8B10C00049CECC /* VideoViewLayouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 515878D31E8B10C00049CECC /* VideoViewLayouter.m */; };
 		CAC254001E886E3A00CCABF9 /* GPMsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC253FF1E886E3A00CCABF9 /* GPMsgTableViewCell.m */; };
+		CAD06F301E8C58B0007AA12B /* FUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06EFB1E8C58B0007AA12B /* FUIAlertView.m */; };
+		CAD06F311E8C58B0007AA12B /* FUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06EFD1E8C58B0007AA12B /* FUIButton.m */; };
+		CAD06F321E8C58B0007AA12B /* FUICellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06EFF1E8C58B0007AA12B /* FUICellBackgroundView.m */; };
+		CAD06F331E8C58B0007AA12B /* FUIPopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F011E8C58B0007AA12B /* FUIPopoverBackgroundView.m */; };
+		CAD06F341E8C58B0007AA12B /* FUISegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F031E8C58B0007AA12B /* FUISegmentedControl.m */; };
+		CAD06F351E8C58B0007AA12B /* FUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F051E8C58B0007AA12B /* FUISwitch.m */; };
+		CAD06F361E8C58B0007AA12B /* FUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F071E8C58B0007AA12B /* FUITextField.m */; };
+		CAD06F371E8C58B0007AA12B /* NSString+Icons.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F091E8C58B0007AA12B /* NSString+Icons.m */; };
+		CAD06F381E8C58B0007AA12B /* UIBarButtonItem+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F0B1E8C58B0007AA12B /* UIBarButtonItem+FlatUI.m */; };
+		CAD06F391E8C58B0007AA12B /* UIColor+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F0D1E8C58B0007AA12B /* UIColor+FlatUI.m */; };
+		CAD06F3A1E8C58B0007AA12B /* UIFont+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F0F1E8C58B0007AA12B /* UIFont+FlatUI.m */; };
+		CAD06F3B1E8C58B0007AA12B /* UIImage+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F111E8C58B0007AA12B /* UIImage+FlatUI.m */; };
+		CAD06F3C1E8C58B0007AA12B /* UINavigationBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F131E8C58B0007AA12B /* UINavigationBar+FlatUI.m */; };
+		CAD06F3D1E8C58B0007AA12B /* UIPopoverController+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F151E8C58B0007AA12B /* UIPopoverController+FlatUI.m */; };
+		CAD06F3E1E8C58B0007AA12B /* UIProgressView+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F171E8C58B0007AA12B /* UIProgressView+FlatUI.m */; };
+		CAD06F3F1E8C58B0007AA12B /* UISlider+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F191E8C58B0007AA12B /* UISlider+FlatUI.m */; };
+		CAD06F401E8C58B0007AA12B /* UIStepper+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F1B1E8C58B0007AA12B /* UIStepper+FlatUI.m */; };
+		CAD06F411E8C58B0007AA12B /* UITabBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F1D1E8C58B0007AA12B /* UITabBar+FlatUI.m */; };
+		CAD06F421E8C58B0007AA12B /* UITableViewCell+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F1F1E8C58B0007AA12B /* UITableViewCell+FlatUI.m */; };
+		CAD06F431E8C58B0007AA12B /* UIToolbar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F211E8C58B0007AA12B /* UIToolbar+FlatUI.m */; };
+		CAD06F441E8C58B0007AA12B /* flat-ui-icons-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD06F221E8C58B0007AA12B /* flat-ui-icons-regular.ttf */; };
+		CAD06F451E8C58B0007AA12B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD06F231E8C58B0007AA12B /* Lato-Bold.ttf */; };
+		CAD06F461E8C58B0007AA12B /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD06F241E8C58B0007AA12B /* Lato-Italic.ttf */; };
+		CAD06F471E8C58B0007AA12B /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD06F251E8C58B0007AA12B /* Lato-Light.ttf */; };
+		CAD06F481E8C58B0007AA12B /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD06F261E8C58B0007AA12B /* Lato-Regular.ttf */; };
+		CAD06F491E8C58B0007AA12B /* FlatUIKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CAD06F291E8C58B0007AA12B /* FlatUIKit.xcconfig */; };
+		CAD06F4A1E8C58B0007AA12B /* FlatUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD06F2A1E8C58B0007AA12B /* FlatUIKit-dummy.m */; };
+		CAD06F4B1E8C58B0007AA12B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAD06F2D1E8C58B0007AA12B /* Info.plist */; };
 		CAD26BF71E8B1D15004C4CAE /* GPHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD26BF61E8B1D15004C4CAE /* GPHeadView.m */; };
 		CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D3D1E7DB36B0066F527 /* main.m */; };
 		CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D401E7DB36B0066F527 /* AppDelegate.m */; };
@@ -83,6 +111,58 @@
 		C9335ACB42D5D2AF44A15A74 /* Pods_GamePortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC253FE1E886E3A00CCABF9 /* GPMsgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMsgTableViewCell.h; sourceTree = "<group>"; };
 		CAC253FF1E886E3A00CCABF9 /* GPMsgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMsgTableViewCell.m; sourceTree = "<group>"; };
+		CAD06EF91E8C58B0007AA12B /* FlatUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlatUIKit.h; path = Classes/ios/FlatUIKit.h; sourceTree = "<group>"; };
+		CAD06EFA1E8C58B0007AA12B /* FUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIAlertView.h; path = Classes/ios/FUIAlertView.h; sourceTree = "<group>"; };
+		CAD06EFB1E8C58B0007AA12B /* FUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FUIAlertView.m; path = Classes/ios/FUIAlertView.m; sourceTree = "<group>"; };
+		CAD06EFC1E8C58B0007AA12B /* FUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIButton.h; path = Classes/ios/FUIButton.h; sourceTree = "<group>"; };
+		CAD06EFD1E8C58B0007AA12B /* FUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FUIButton.m; path = Classes/ios/FUIButton.m; sourceTree = "<group>"; };
+		CAD06EFE1E8C58B0007AA12B /* FUICellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUICellBackgroundView.h; path = Classes/ios/FUICellBackgroundView.h; sourceTree = "<group>"; };
+		CAD06EFF1E8C58B0007AA12B /* FUICellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FUICellBackgroundView.m; path = Classes/ios/FUICellBackgroundView.m; sourceTree = "<group>"; };
+		CAD06F001E8C58B0007AA12B /* FUIPopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUIPopoverBackgroundView.h; path = Classes/ios/FUIPopoverBackgroundView.h; sourceTree = "<group>"; };
+		CAD06F011E8C58B0007AA12B /* FUIPopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FUIPopoverBackgroundView.m; path = Classes/ios/FUIPopoverBackgroundView.m; sourceTree = "<group>"; };
+		CAD06F021E8C58B0007AA12B /* FUISegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUISegmentedControl.h; path = Classes/ios/FUISegmentedControl.h; sourceTree = "<group>"; };
+		CAD06F031E8C58B0007AA12B /* FUISegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FUISegmentedControl.m; path = Classes/ios/FUISegmentedControl.m; sourceTree = "<group>"; };
+		CAD06F041E8C58B0007AA12B /* FUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUISwitch.h; path = Classes/ios/FUISwitch.h; sourceTree = "<group>"; };
+		CAD06F051E8C58B0007AA12B /* FUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FUISwitch.m; path = Classes/ios/FUISwitch.m; sourceTree = "<group>"; };
+		CAD06F061E8C58B0007AA12B /* FUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FUITextField.h; path = Classes/ios/FUITextField.h; sourceTree = "<group>"; };
+		CAD06F071E8C58B0007AA12B /* FUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FUITextField.m; path = Classes/ios/FUITextField.m; sourceTree = "<group>"; };
+		CAD06F081E8C58B0007AA12B /* NSString+Icons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Icons.h"; path = "Classes/ios/NSString+Icons.h"; sourceTree = "<group>"; };
+		CAD06F091E8C58B0007AA12B /* NSString+Icons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Icons.m"; path = "Classes/ios/NSString+Icons.m"; sourceTree = "<group>"; };
+		CAD06F0A1E8C58B0007AA12B /* UIBarButtonItem+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+FlatUI.h"; path = "Classes/ios/UIBarButtonItem+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F0B1E8C58B0007AA12B /* UIBarButtonItem+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+FlatUI.m"; path = "Classes/ios/UIBarButtonItem+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F0C1E8C58B0007AA12B /* UIColor+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+FlatUI.h"; path = "Classes/ios/UIColor+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F0D1E8C58B0007AA12B /* UIColor+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FlatUI.m"; path = "Classes/ios/UIColor+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F0E1E8C58B0007AA12B /* UIFont+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+FlatUI.h"; path = "Classes/ios/UIFont+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F0F1E8C58B0007AA12B /* UIFont+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+FlatUI.m"; path = "Classes/ios/UIFont+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F101E8C58B0007AA12B /* UIImage+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FlatUI.h"; path = "Classes/ios/UIImage+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F111E8C58B0007AA12B /* UIImage+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FlatUI.m"; path = "Classes/ios/UIImage+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F121E8C58B0007AA12B /* UINavigationBar+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+FlatUI.h"; path = "Classes/ios/UINavigationBar+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F131E8C58B0007AA12B /* UINavigationBar+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+FlatUI.m"; path = "Classes/ios/UINavigationBar+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F141E8C58B0007AA12B /* UIPopoverController+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIPopoverController+FlatUI.h"; path = "Classes/ios/UIPopoverController+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F151E8C58B0007AA12B /* UIPopoverController+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIPopoverController+FlatUI.m"; path = "Classes/ios/UIPopoverController+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F161E8C58B0007AA12B /* UIProgressView+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+FlatUI.h"; path = "Classes/ios/UIProgressView+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F171E8C58B0007AA12B /* UIProgressView+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+FlatUI.m"; path = "Classes/ios/UIProgressView+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F181E8C58B0007AA12B /* UISlider+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UISlider+FlatUI.h"; path = "Classes/ios/UISlider+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F191E8C58B0007AA12B /* UISlider+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UISlider+FlatUI.m"; path = "Classes/ios/UISlider+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F1A1E8C58B0007AA12B /* UIStepper+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIStepper+FlatUI.h"; path = "Classes/ios/UIStepper+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F1B1E8C58B0007AA12B /* UIStepper+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIStepper+FlatUI.m"; path = "Classes/ios/UIStepper+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F1C1E8C58B0007AA12B /* UITabBar+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITabBar+FlatUI.h"; path = "Classes/ios/UITabBar+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F1D1E8C58B0007AA12B /* UITabBar+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITabBar+FlatUI.m"; path = "Classes/ios/UITabBar+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F1E1E8C58B0007AA12B /* UITableViewCell+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FlatUI.h"; path = "Classes/ios/UITableViewCell+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F1F1E8C58B0007AA12B /* UITableViewCell+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FlatUI.m"; path = "Classes/ios/UITableViewCell+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F201E8C58B0007AA12B /* UIToolbar+FlatUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIToolbar+FlatUI.h"; path = "Classes/ios/UIToolbar+FlatUI.h"; sourceTree = "<group>"; };
+		CAD06F211E8C58B0007AA12B /* UIToolbar+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIToolbar+FlatUI.m"; path = "Classes/ios/UIToolbar+FlatUI.m"; sourceTree = "<group>"; };
+		CAD06F221E8C58B0007AA12B /* flat-ui-icons-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "flat-ui-icons-regular.ttf"; path = "Resources/flat-ui-icons-regular.ttf"; sourceTree = "<group>"; };
+		CAD06F231E8C58B0007AA12B /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Bold.ttf"; path = "Resources/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		CAD06F241E8C58B0007AA12B /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Italic.ttf"; path = "Resources/Lato-Italic.ttf"; sourceTree = "<group>"; };
+		CAD06F251E8C58B0007AA12B /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "Resources/Lato-Light.ttf"; sourceTree = "<group>"; };
+		CAD06F261E8C58B0007AA12B /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "Resources/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		CAD06F281E8C58B0007AA12B /* FlatUIKit.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = FlatUIKit.modulemap; sourceTree = "<group>"; };
+		CAD06F291E8C58B0007AA12B /* FlatUIKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FlatUIKit.xcconfig; sourceTree = "<group>"; };
+		CAD06F2A1E8C58B0007AA12B /* FlatUIKit-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FlatUIKit-dummy.m"; sourceTree = "<group>"; };
+		CAD06F2B1E8C58B0007AA12B /* FlatUIKit-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlatUIKit-prefix.pch"; sourceTree = "<group>"; };
+		CAD06F2C1E8C58B0007AA12B /* FlatUIKit-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlatUIKit-umbrella.h"; sourceTree = "<group>"; };
+		CAD06F2D1E8C58B0007AA12B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAD26BF51E8B1D15004C4CAE /* GPHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPHeadView.h; sourceTree = "<group>"; };
 		CAD26BF61E8B1D15004C4CAE /* GPHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPHeadView.m; sourceTree = "<group>"; };
 		CAFE3D391E7DB36B0066F527 /* GamePortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +253,83 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CAD06F271E8C58B0007AA12B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAD06F221E8C58B0007AA12B /* flat-ui-icons-regular.ttf */,
+				CAD06F231E8C58B0007AA12B /* Lato-Bold.ttf */,
+				CAD06F241E8C58B0007AA12B /* Lato-Italic.ttf */,
+				CAD06F251E8C58B0007AA12B /* Lato-Light.ttf */,
+				CAD06F261E8C58B0007AA12B /* Lato-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CAD06F2E1E8C58B0007AA12B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CAD06F281E8C58B0007AA12B /* FlatUIKit.modulemap */,
+				CAD06F291E8C58B0007AA12B /* FlatUIKit.xcconfig */,
+				CAD06F2A1E8C58B0007AA12B /* FlatUIKit-dummy.m */,
+				CAD06F2B1E8C58B0007AA12B /* FlatUIKit-prefix.pch */,
+				CAD06F2C1E8C58B0007AA12B /* FlatUIKit-umbrella.h */,
+				CAD06F2D1E8C58B0007AA12B /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FlatUIKit";
+			sourceTree = "<group>";
+		};
+		CAD06F2F1E8C58B0007AA12B /* FlatUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CAD06EF91E8C58B0007AA12B /* FlatUIKit.h */,
+				CAD06EFA1E8C58B0007AA12B /* FUIAlertView.h */,
+				CAD06EFB1E8C58B0007AA12B /* FUIAlertView.m */,
+				CAD06EFC1E8C58B0007AA12B /* FUIButton.h */,
+				CAD06EFD1E8C58B0007AA12B /* FUIButton.m */,
+				CAD06EFE1E8C58B0007AA12B /* FUICellBackgroundView.h */,
+				CAD06EFF1E8C58B0007AA12B /* FUICellBackgroundView.m */,
+				CAD06F001E8C58B0007AA12B /* FUIPopoverBackgroundView.h */,
+				CAD06F011E8C58B0007AA12B /* FUIPopoverBackgroundView.m */,
+				CAD06F021E8C58B0007AA12B /* FUISegmentedControl.h */,
+				CAD06F031E8C58B0007AA12B /* FUISegmentedControl.m */,
+				CAD06F041E8C58B0007AA12B /* FUISwitch.h */,
+				CAD06F051E8C58B0007AA12B /* FUISwitch.m */,
+				CAD06F061E8C58B0007AA12B /* FUITextField.h */,
+				CAD06F071E8C58B0007AA12B /* FUITextField.m */,
+				CAD06F081E8C58B0007AA12B /* NSString+Icons.h */,
+				CAD06F091E8C58B0007AA12B /* NSString+Icons.m */,
+				CAD06F0A1E8C58B0007AA12B /* UIBarButtonItem+FlatUI.h */,
+				CAD06F0B1E8C58B0007AA12B /* UIBarButtonItem+FlatUI.m */,
+				CAD06F0C1E8C58B0007AA12B /* UIColor+FlatUI.h */,
+				CAD06F0D1E8C58B0007AA12B /* UIColor+FlatUI.m */,
+				CAD06F0E1E8C58B0007AA12B /* UIFont+FlatUI.h */,
+				CAD06F0F1E8C58B0007AA12B /* UIFont+FlatUI.m */,
+				CAD06F101E8C58B0007AA12B /* UIImage+FlatUI.h */,
+				CAD06F111E8C58B0007AA12B /* UIImage+FlatUI.m */,
+				CAD06F121E8C58B0007AA12B /* UINavigationBar+FlatUI.h */,
+				CAD06F131E8C58B0007AA12B /* UINavigationBar+FlatUI.m */,
+				CAD06F141E8C58B0007AA12B /* UIPopoverController+FlatUI.h */,
+				CAD06F151E8C58B0007AA12B /* UIPopoverController+FlatUI.m */,
+				CAD06F161E8C58B0007AA12B /* UIProgressView+FlatUI.h */,
+				CAD06F171E8C58B0007AA12B /* UIProgressView+FlatUI.m */,
+				CAD06F181E8C58B0007AA12B /* UISlider+FlatUI.h */,
+				CAD06F191E8C58B0007AA12B /* UISlider+FlatUI.m */,
+				CAD06F1A1E8C58B0007AA12B /* UIStepper+FlatUI.h */,
+				CAD06F1B1E8C58B0007AA12B /* UIStepper+FlatUI.m */,
+				CAD06F1C1E8C58B0007AA12B /* UITabBar+FlatUI.h */,
+				CAD06F1D1E8C58B0007AA12B /* UITabBar+FlatUI.m */,
+				CAD06F1E1E8C58B0007AA12B /* UITableViewCell+FlatUI.h */,
+				CAD06F1F1E8C58B0007AA12B /* UITableViewCell+FlatUI.m */,
+				CAD06F201E8C58B0007AA12B /* UIToolbar+FlatUI.h */,
+				CAD06F211E8C58B0007AA12B /* UIToolbar+FlatUI.m */,
+				CAD06F271E8C58B0007AA12B /* Resources */,
+				CAD06F2E1E8C58B0007AA12B /* Support Files */,
+			);
+			name = FlatUIKit;
+			path = ../Pods/FlatUIKit;
+			sourceTree = "<group>";
+		};
 		CAFE3D301E7DB36B0066F527 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +355,7 @@
 		CAFE3D3B1E7DB36B0066F527 /* GamePortal */ = {
 			isa = PBXGroup;
 			children = (
+				CAD06F2F1E8C58B0007AA12B /* FlatUIKit */,
 				515878B61E8B092C0049CECC /* AgoraRtcEngineKit.framework */,
 				515878B71E8B092C0049CECC /* videoprp.framework */,
 				CAFE3D6F1E7DC2DF0066F527 /* GameViewController.h */,
@@ -369,10 +527,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD06F491E8C58B0007AA12B /* FlatUIKit.xcconfig in Resources */,
 				515878BB1E8B09950049CECC /* Info.plist in Resources */,
+				CAD06F461E8C58B0007AA12B /* Lato-Italic.ttf in Resources */,
+				CAD06F451E8C58B0007AA12B /* Lato-Bold.ttf in Resources */,
 				CAFE3D4C1E7DB36B0066F527 /* LaunchScreen.storyboard in Resources */,
+				CAD06F481E8C58B0007AA12B /* Lato-Regular.ttf in Resources */,
 				CAFE3D491E7DB36B0066F527 /* Assets.xcassets in Resources */,
+				CAD06F441E8C58B0007AA12B /* flat-ui-icons-regular.ttf in Resources */,
+				CAD06F4B1E8C58B0007AA12B /* Info.plist in Resources */,
 				CAFE3D471E7DB36B0066F527 /* Main.storyboard in Resources */,
+				CAD06F471E8C58B0007AA12B /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,15 +700,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD06F4A1E8C58B0007AA12B /* FlatUIKit-dummy.m in Sources */,
+				CAD06F421E8C58B0007AA12B /* UITableViewCell+FlatUI.m in Sources */,
+				CAD06F371E8C58B0007AA12B /* NSString+Icons.m in Sources */,
+				CAD06F301E8C58B0007AA12B /* FUIAlertView.m in Sources */,
 				CAC254001E886E3A00CCABF9 /* GPMsgTableViewCell.m in Sources */,
+				CAD06F391E8C58B0007AA12B /* UIColor+FlatUI.m in Sources */,
 				515878D11E8B10B40049CECC /* VideoSession.m in Sources */,
+				CAD06F341E8C58B0007AA12B /* FUISegmentedControl.m in Sources */,
 				CAFE3D711E7DC2DF0066F527 /* GameViewController.m in Sources */,
+				CAD06F351E8C58B0007AA12B /* FUISwitch.m in Sources */,
+				CAD06F3E1E8C58B0007AA12B /* UIProgressView+FlatUI.m in Sources */,
+				CAD06F361E8C58B0007AA12B /* FUITextField.m in Sources */,
 				515878CE1E8B0B9D0049CECC /* KeyCenter.m in Sources */,
+				CAD06F411E8C58B0007AA12B /* UITabBar+FlatUI.m in Sources */,
+				CAD06F331E8C58B0007AA12B /* FUIPopoverBackgroundView.m in Sources */,
+				CAD06F401E8C58B0007AA12B /* UIStepper+FlatUI.m in Sources */,
 				CAFE3D441E7DB36B0066F527 /* ViewController.m in Sources */,
 				CAD26BF71E8B1D15004C4CAE /* GPHeadView.m in Sources */,
 				515878D41E8B10C00049CECC /* VideoViewLayouter.m in Sources */,
+				CAD06F3D1E8C58B0007AA12B /* UIPopoverController+FlatUI.m in Sources */,
 				CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */,
+				CAD06F3B1E8C58B0007AA12B /* UIImage+FlatUI.m in Sources */,
+				CAD06F321E8C58B0007AA12B /* FUICellBackgroundView.m in Sources */,
+				CAD06F3F1E8C58B0007AA12B /* UISlider+FlatUI.m in Sources */,
 				CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */,
+				CAD06F3C1E8C58B0007AA12B /* UINavigationBar+FlatUI.m in Sources */,
+				CAD06F311E8C58B0007AA12B /* FUIButton.m in Sources */,
+				CAD06F381E8C58B0007AA12B /* UIBarButtonItem+FlatUI.m in Sources */,
+				CAD06F431E8C58B0007AA12B /* UIToolbar+FlatUI.m in Sources */,
+				CAD06F3A1E8C58B0007AA12B /* UIFont+FlatUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,11 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    _role = (long)1;
-    if (_role == 1){
-        NSLog(@"%ld", _role);
-    }
+    application.statusBarHidden = YES;
     
     return YES;
 }

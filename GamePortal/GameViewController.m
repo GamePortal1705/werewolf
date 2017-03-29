@@ -12,11 +12,18 @@
 #import "VideoViewLayouter.h"
 #import "KeyCenter.h"
 #import "GPMsgTableViewCell.h"
-#import "GPHeadview.h"
+#import "GPHeadView.h"
+#import "FUISwitch.h"
+#import "UIColor+FlatUI.h"
+#import "FUIButton.h"
+#import "UIFont+FlatUI.h"
 
 @interface GameViewController () <AgoraRtcEngineDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *enhancerButton;
+@property (weak, nonatomic) IBOutlet FUIButton *stopStatementBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+
+@property (strong, nonatomic) FUISwitch *enhanceSwitch;
 
 @property (weak, nonatomic) IBOutlet UIView *remoteContainerView;
 @property (strong, nonatomic) SocketIOClient *socket;
@@ -62,7 +69,6 @@
     _msgArray = [[NSMutableArray alloc] init];
     _avBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
     
-    
     self.videoSessions = [[NSMutableArray alloc] init];
     //self.roomNameLabel.text = self.roomName;
     self.backgroundImageView.alpha = 1.0;
@@ -72,11 +78,34 @@
     hv.center = CGPointMake(self.view.frame.size.width/2, 50);
     [self.view addSubview:hv];
     
-    [self updateButtonsVisiablity];
+    _enhanceSwitch = [[FUISwitch alloc] initWithFrame:CGRectMake(10, 400, 60, 30)];
+    _enhanceSwitch.onColor = [UIColor turquoiseColor];
+    _enhanceSwitch.offColor = [UIColor cloudsColor];
+    _enhanceSwitch.onBackgroundColor = [UIColor midnightBlueColor];
+    _enhanceSwitch.offBackgroundColor = [UIColor silverColor];
+    _enhanceSwitch.offLabel.font = [UIFont boldFlatFontOfSize:14];
+    _enhanceSwitch.onLabel.font = [UIFont boldFlatFontOfSize:14];
+    [self.view addSubview:_enhanceSwitch];
+    _enhanceSwitch.hidden = YES;
+    [_enhanceSwitch addTarget:self action:@selector(changeEnhanceMode) forControlEvents:UIControlEventValueChanged];
+    // default behaviour for video chat enhance mode is off.
+    _enhanceSwitch.on = NO;
+    
+    _stopStatementBtn.buttonColor = [UIColor redColor];
+    _stopStatementBtn.shadowColor = [UIColor redColor];
+    _stopStatementBtn.shadowHeight = 3.0f;
+    _stopStatementBtn.cornerRadius = 6.0f;
+    _stopStatementBtn.titleLabel.font = [UIFont boldFlatFontOfSize:14];
+    [_stopStatementBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [_stopStatementBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+
+    [_stopStatementBtn setHidden:YES];
+    
     [self loadAgoraKit];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    //_enhancerButton.hidden = YES;
     [super viewWillAppear:animated];
     [self setupSocket];
     [_socket connect];
@@ -262,12 +291,14 @@
 }
 
 - (void)startBroadCast{
+    _enhanceSwitch.hidden = NO;
     self.clientRole = AgoraRtc_ClientRole_Broadcaster;
     [self.rtcEngine setClientRole:self.clientRole withKey:nil];
     [self updateInterfaceWithAnimation:YES];
 }
 
 - (void)stopBroadCast{
+    _enhanceSwitch.hidden = YES;
     self.clientRole = AgoraRtc_ClientRole_Audience;
     if (self.fullSession.uid == 0) {
         self.fullSession = nil;
@@ -288,7 +319,7 @@
     if (self.isBroadcaster) {
         self.shouldEnhancer = YES;
     }
-    [self updateButtonsVisiablity];
+    //[self updateButtonsVisiablity];
 }
 
 - (void)setIsMuted:(BOOL)isMuted {
@@ -321,19 +352,26 @@
     }
 }
 
-
 - (IBAction)doEnhancerPressed:(id)sender {
     self.shouldEnhancer = !self.shouldEnhancer;
 }
 
+- (IBAction)stopStatement:(id)sender {
+    [self stopBroadCast];
+}
+
+- (void)changeEnhanceMode {
+    self.shouldEnhancer = !self.shouldEnhancer;
+}
+
+/*
 - (void)updateButtonsVisiablity {
-    /*
      [self.broadcastButton setImage:[UIImage imageNamed:self.isBroadcaster ? @"btn_join_cancel" : @"btn_join"] forState:UIControlStateNormal];
      for (UIButton *button in self.sessionButtons) {
      button.hidden = !self.isBroadcaster;
      }
-     */
 }
+*/
 
 - (void)leaveChannel {
     [self setIdleTimerActive:YES];

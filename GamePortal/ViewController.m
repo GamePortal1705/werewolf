@@ -11,12 +11,17 @@
 
 #import "ViewController.h"
 #import "GameViewController.h"
+#import "FUIButton.h"
+#import "FUITextField.h"
+#import "UIColor+FlatUI.h"
+#import "UIFont+FlatUI.h"
 
 @interface ViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet FUITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet FUIButton *launchBtn;
+
 @property CALayer *bottomLine;
-@property (weak, nonatomic) IBOutlet UIButton *launchBtn;
 
 @end
 
@@ -27,6 +32,22 @@
     
     self.inputTextField.delegate = self;
     
+    _launchBtn.buttonColor = [UIColor turquoiseColor];
+    _launchBtn.shadowColor = [UIColor greenSeaColor];
+    _launchBtn.shadowHeight = 3.0f;
+    _launchBtn.cornerRadius = 6.0f;
+    _launchBtn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [_launchBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [_launchBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    
+    _inputTextField.font = [UIFont flatFontOfSize:16];
+    _inputTextField.backgroundColor = [UIColor clearColor];
+    _inputTextField.edgeInsets = UIEdgeInsetsMake(4.0f, 15.0f, 4.0f, 15.0f);
+    _inputTextField.textFieldColor = [UIColor clearColor];
+    _inputTextField.borderColor = [UIColor turquoiseColor];
+    _inputTextField.borderWidth = 2.0f;
+    _inputTextField.cornerRadius = 3.0f;
+    
     _bottomLine = [CALayer layer];
     _bottomLine.frame = CGRectMake(0.0f, _inputTextField.frame.size.height - 1, _inputTextField.frame.size.width, 1.0f);
     _bottomLine.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4].CGColor;
@@ -35,11 +56,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [UIView animateWithDuration:1.0f
-                          delay:0
-                        options:UIViewAnimationOptionRepeat
-                     animations:^{ self.launchBtn.transform = CGAffineTransformMakeScale(1.5, 1.5);}
-                     completion: NULL];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,12 +64,11 @@
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    self.bottomLine.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0].CGColor;
+    _bottomLine.hidden = YES;
     return YES;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    self.bottomLine.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.4].CGColor;
     return YES;
 }
 

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-GamePortal.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,22 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FCF04C445F20E543B0F364CB5B3F838</key>
+		<key>617BF5CAE6015D15FBEC35CB26D87586</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA0513547D6FAC143CE4EEF27FA81449</key>
+		<key>77C8A74D1D6CBC26821760B380909C6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDC1DAAB7679442A2C7FA7C3B90A340A</key>
+		<key>D88D87F9C08CC6014A19D5865226133B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F1AF68F71B2B9051F8BDD60EAC9CD1B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE564141DD6CCE1D5C4ACCA6A32088C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
