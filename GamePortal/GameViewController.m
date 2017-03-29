@@ -12,6 +12,7 @@
 #import "VideoViewLayouter.h"
 #import "KeyCenter.h"
 #import "GPMsgTableViewCell.h"
+#import "GPHeadview.h"
 
 @interface GameViewController () <AgoraRtcEngineDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *enhancerButton;
@@ -66,6 +67,11 @@
     //self.roomNameLabel.text = self.roomName;
     self.backgroundImageView.alpha = 1.0;
     self.roomName = @"ctctct";
+    
+    GPHeadView *hv = [[GPHeadView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    hv.center = CGPointMake(self.view.frame.size.width/2, 50);
+    [self.view addSubview:hv];
+    
     [self updateButtonsVisiablity];
     [self loadAgoraKit];
 }
@@ -89,6 +95,8 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark SocketIO
+
 - (void)setupSocket {
     /* client try to connect to server */
     [_socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
@@ -108,7 +116,7 @@
         /* get role information. */
         NSDictionary *rr = [data objectAtIndex:0];
         _sessionId = rr[@"sessionId"];
-        _playerId = rr[@"id"];
+        _playerId = [rr[@"id"] integerValue];
         NSDictionary *tmp = rr[@"data"];
         _role = [tmp[@"role"] integerValue];
     }];
@@ -185,6 +193,8 @@
     }
 }
 
+#pragma mark - TableView Delegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 30;
 }
@@ -209,6 +219,8 @@
     return cell;
 }
 
+#pragma mark - IBAction
+
 - (IBAction)makeVoteDecision:(id)sender {
     int index = 0;
     for (UIButton *tmp in self.avBoxs) {
@@ -227,6 +239,7 @@
     _timerLabel.hidden = YES;
 }
 
+#pragma mark video chat
 
 - (BOOL)isBroadcaster {
     return self.clientRole == AgoraRtc_ClientRole_Broadcaster;
@@ -417,7 +430,8 @@
     }
 }
 
-//MARK: - Agora Media SDK
+#pragma mark - Agora Media SDK
+
 - (void)loadAgoraKit {
     self.rtcEngine = [AgoraRtcEngineKit sharedEngineWithAppId:[KeyCenter AppId] delegate:self];
     [self.rtcEngine setChannelProfile:AgoraRtc_ChannelProfile_LiveBroadcasting];
@@ -445,6 +459,7 @@
         self.shouldEnhancer = YES;
     }
 }
+
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed {
     VideoSession *userSession = [self videoSessionOfUid:uid];
     [self.rtcEngine setupRemoteVideo:userSession.canvas];

@@ -272,6 +272,7 @@
                             <constraint firstItem="owL-iS-Akk" firstAttribute="top" secondItem="7Lt-fv-KV3" secondAttribute="bottom" constant="104" id="wlT-mq-Zdq"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="avBox1" destination="ZjN-iV-PPE" id="8yh-xp-HQm"/>
                         <outlet property="avBox2" destination="Heh-fg-5TO" id="lOP-wy-awH"/>
