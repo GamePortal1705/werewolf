@@ -70,7 +70,7 @@
         [gvc setStage:kInitial];
         [gvc setUsername:self.inputTextField.text];
         [gvc setVideoProfile:AgoraRtc_VideoProfile_480P];
-        [gvc setClientRole:AgoraRtc_ClientRole_Broadcaster];
+        [gvc setClientRole:AgoraRtc_ClientRole_Audience];
     }
 }
 

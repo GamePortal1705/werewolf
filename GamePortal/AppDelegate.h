@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property long role;
 @property (strong, nonatomic) UIWindow *window;
 
 

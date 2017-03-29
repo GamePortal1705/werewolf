@@ -51,6 +51,182 @@
 
 //Video Chat
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.msgTableView.delegate = self;
+    self.msgTableView.dataSource = self;
+    self.msgTableView.separatorColor = [UIColor clearColor];
+    NSURL* url = [[NSURL alloc] initWithString:@"http://notebook.sidxiong.me:3000"];
+    _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @NO, @"forcePolling": @YES}];
+    _msgArray = [[NSMutableArray alloc] init];
+    _avBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
+    
+    
+    self.videoSessions = [[NSMutableArray alloc] init];
+    //self.roomNameLabel.text = self.roomName;
+    self.backgroundImageView.alpha = 1.0;
+    self.roomName = @"ctctct";
+    [self updateButtonsVisiablity];
+    [self loadAgoraKit];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupSocket];
+    [_socket connect];
+    if (_stage != kVote) {
+        _timerLabel.hidden = YES;
+    }
+    for (UIButton *box in _avBoxs) {
+        box.layer.cornerRadius = 25;
+        [box.layer setMasksToBounds:YES];
+        [box.layer setBorderWidth:1.5];
+        box.userInteractionEnabled = NO;
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)setupSocket {
+    /* client try to connect to server */
+    [_socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"socket connected");
+        [self setStage:kConnectionEstablished];
+        OnAckCallback *callback = [_socket emitWithAck:@"joinGame" with:@[@{@"playerName": self.username}]];
+        [callback timingOutAfter:5.0 callback:^(NSArray* data) {
+            /* join game call back do nothing */
+            NSLog(@"joinGame call back");
+        }];
+    }];
+    
+    // send Message contains ID, playerName, sessionID and DispatchRoleMsg
+    [_socket on:@"dispatchRole" callback:^(NSArray * data, SocketAckEmitter * ack) {
+        /* user got its rule, game is starting. */
+        [self setStage: kGameStart];
+        /* get role information. */
+        NSDictionary *rr = [data objectAtIndex:0];
+        _sessionId = rr[@"sessionId"];
+        _playerId = rr[@"id"];
+        NSDictionary *tmp = rr[@"data"];
+        _role = [tmp[@"role"] integerValue];
+    }];
+    
+    [_socket on:@"night" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        /* get the current night's sequnce number. */
+        self.backgroundImageView.alpha = 1.0;
+        self.msgTableView.backgroundColor = [UIColor redColor];
+        NSString *msg1 = @"Night has come, please close your eyes.";
+        NSString *msg2 = @"Wolves please open your eyes, and choose one to kill.";
+        [_msgArray addObject: msg1];
+        [_msgArray addObject: msg2];
+        [_msgTableView reloadData];
+        if (self.role  == 1) {
+            self.stage = kKill;
+            [self buttonClickEnable];
+            _msgTableView.backgroundColor = [UIColor blueColor];
+        } else {
+            _msgTableView.backgroundColor = [UIColor yellowColor];
+        }
+    }];
+    
+    // GamePortal Backend Server Event: systemInfo
+    [_socket on:@"systemInfo" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        /* receive system msg from server. */
+        // message that contains ID valued -1 and data a system log string
+        NSString *str = [data objectAtIndex:0][@"data"];
+        [_msgArray addObject: str];
+        [_msgTableView reloadData];
+    }];
+    
+    [_socket on:@"vote" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        _stage = kVote;
+        [self buttonClickEnable];
+        NSString *votehint = @"Vote begins, please choose one player in 60 secs";
+        [_msgArray addObject:votehint];
+        [self.msgTableView reloadData];
+    }];
+    
+    [_socket on:@"makeStatement" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        self.backgroundImageView.alpha = 0.0;
+        NSDictionary *rr = [data objectAtIndex: 0];
+        NSString *un = rr[@"playerName"];
+        NSString *uid = rr[@"ID"];
+        if ([un isEqualToString:_username]) {
+            [self startBroadCast];
+        }
+    }];
+}
+
+- (void)buttonClickEnable {
+    
+    if (_stage == kVote || _stage == kKill) {
+        NSLog(@"Vote!!!!!!!!!!!!!!!");
+        for (UIButton *box in self.avBoxs) {
+            box.userInteractionEnabled = YES;
+        }
+        _timerLabel.hidden = NO;
+        if (![_timer isValid]) {
+            _startDateTime = [NSDate date];
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(readTimer) userInfo:nil repeats:YES];
+        }
+    }
+}
+
+- (void)readTimer {
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:_startDateTime];
+    NSInteger interval= 60 - timeInterval;
+    [self.timerLabel setText:[[NSString alloc] initWithFormat:@"%2ld", (long)interval]];
+    if (interval == 0) {
+        [_timer invalidate];
+        _timerLabel.hidden = YES;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.msgArray count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GPMsgTableViewCell *cell = nil;
+    cell = [self.msgTableView dequeueReusableCellWithIdentifier: @"msgCell"];
+    if (!cell) {
+        cell = [[GPMsgTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"msgCell"];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.msg.text = [self.msgArray objectAtIndex:indexPath.row];
+    cell.msg.adjustsFontSizeToFitWidth = YES;
+    return cell;
+}
+
+- (IBAction)makeVoteDecision:(id)sender {
+    int index = 0;
+    for (UIButton *tmp in self.avBoxs) {
+        if (sender == tmp) {
+            NSLog(@"%d", index);
+            break;
+        }
+        index++;
+    }
+    NSNumber *iid = [[NSNumber alloc] initWithInt:index];
+    [_socket emit:@"kill" with:@[@{@"data": iid}]];
+    // disable button interaction & invalid timer
+    for (UIButton *tmp in self.avBoxs)
+        tmp.userInteractionEnabled = NO;
+    [_timer invalidate];
+    _timerLabel.hidden = YES;
+}
+
 
 - (BOOL)isBroadcaster {
     return self.clientRole == AgoraRtc_ClientRole_Broadcaster;
@@ -256,173 +432,24 @@
     [self addLocalSession];
     
     
-     int code = [self.rtcEngine joinChannelByKey:nil channelName:self.roomName info:nil uid:0 joinSuccess:nil];
-     if (code == 0) {
-     [self setIdleTimerActive:NO];
-     } else {
-     dispatch_async(dispatch_get_main_queue(), ^{
-     [self alertString:[NSString stringWithFormat:@"Join channel failed: %d", code]];
-     });
-     }
-     
-     if (self.isBroadcaster) {
-     self.shouldEnhancer = YES;
-     }
+    int code = [self.rtcEngine joinChannelByKey:nil channelName:self.roomName info:nil uid:0 joinSuccess:nil];
+    if (code == 0) {
+        [self setIdleTimerActive:NO];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self alertString:[NSString stringWithFormat:@"Join channel failed: %d", code]];
+        });
+    }
+    
+    if (self.isBroadcaster) {
+        self.shouldEnhancer = YES;
+    }
 }
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed {
     VideoSession *userSession = [self videoSessionOfUid:uid];
     [self.rtcEngine setupRemoteVideo:userSession.canvas];
 }
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.msgTableView.delegate = self;
-    self.msgTableView.dataSource = self;
-    self.msgTableView.separatorColor = [UIColor clearColor];
-    NSURL* url = [[NSURL alloc] initWithString:@"http://localhost:3000"];
-    _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @NO, @"forcePolling": @YES}];
-    _msgArray = [[NSMutableArray alloc] init];
-    _avBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
-    
-    
-    self.videoSessions = [[NSMutableArray alloc] init];
-    //self.roomNameLabel.text = self.roomName;
-    [self updateButtonsVisiablity];
-    [self loadAgoraKit];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self setupSocket];
-    [_socket connect];
-    if (_stage != kVote) {
-        _timerLabel.hidden = YES;
-    }
-    for (UIButton *box in _avBoxs) {
-        box.layer.cornerRadius = 5;
-        [box.layer setMasksToBounds:YES];
-        [box.layer setBorderWidth:1.5];
-        box.userInteractionEnabled = NO;
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (void)setupSocket {
-    /* client try to connect to server */
-    [_socket on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        NSLog(@"socket connected");
-        [self setStage:kConnectionEstablished];
-        OnAckCallback *callback = [_socket emitWithAck:@"joinGame" with:@[@{@"playerName": self.username}]];
-        [callback timingOutAfter:5.0 callback:^(NSArray* data) {
-            /* join game call back do nothing */
-            NSLog(@"joinGame call back");
-        }];
-    }];
-    
-    // send Message contains ID, playerName, sessionID and DispatchRoleMsg
-    [_socket on:@"dispatchRole" callback:^(NSArray * data, SocketAckEmitter * ack) {
-        /* user got its rule, game is starting. */
-        [self setStage: kGameStart];
-        /* get role information. */
-        NSDictionary *rr = [data objectAtIndex:0];
-        _sessionId = rr[@"sessionId"];
-        _playerId = rr[@"id"];
-    }];
-    
-    [_socket on:@"night" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        /* get the current night's sequnce number. */
-        self.msgTableView.backgroundColor = [UIColor redColor];
-        NSString *msg1 = @"Night has come, please close your eyes.";
-        NSString *msg2 = @"Wolves please open your eyes, and choose one to kill.";
-        [_msgArray addObject: msg1];
-        [_msgArray addObject: msg2];
-        [_msgTableView reloadData];
-    }];
-    
-    // GamePortal Backend Server Event: systemInfo
-    [_socket on:@"systemInfo" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        /* receive system msg from server. */
-        // message that contains ID valued -1 and data a system log string
-        NSString *str = [data objectAtIndex:0][@"data"];
-        [_msgArray addObject: str];
-        [_msgTableView reloadData];
-    }];
-    
-    [_socket on:@"vote" callback:^(NSArray* data, SocketAckEmitter* ack) {
-        _stage = kVote;
-        [self buttonClickEnable];
-        NSString *votehint = @"Vote begins, please choose one player in 60 secs";
-        [_msgArray addObject:votehint];
-        [self.msgTableView reloadData];
-    }];
-}
-
-- (void)buttonClickEnable {
-    if (_stage == kVote) {
-        for (UIButton *box in self.avBoxs) {
-            box.userInteractionEnabled = YES;
-        }
-        _timerLabel.hidden = NO;
-        if (![_timer isValid]) {
-            _startDateTime = [NSDate date];
-            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(readTimer) userInfo:nil repeats:YES];
-        }
-    }
-}
-
-- (void)readTimer {
-    NSDate *currentDate = [NSDate date];
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:_startDateTime];
-    NSInteger interval= 60 - timeInterval;
-    [self.timerLabel setText:[[NSString alloc] initWithFormat:@"%2ld", (long)interval]];
-    if (interval == 0) {
-        [_timer invalidate];
-        _timerLabel.hidden = YES;
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 30;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.msgArray count];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GPMsgTableViewCell *cell = nil;
-    cell = [self.msgTableView dequeueReusableCellWithIdentifier: @"msgCell"];
-    if (!cell) {
-        cell = [[GPMsgTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"msgCell"];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.msg.text = [self.msgArray objectAtIndex:indexPath.row];
-    cell.msg.adjustsFontSizeToFitWidth = YES;
-    return cell;
-}
-
-- (IBAction)makeVoteDecision:(id)sender {
-    int index = 0;
-    for (UIButton *tmp in self.avBoxs) {
-        if (sender == tmp)
-            NSLog(@"%d", index);
-        index++;
-    }
-    // socket emit kill msg
-    // disable button interaction & invalid timer
-    for (UIButton *tmp in self.avBoxs)
-        tmp.userInteractionEnabled = NO;
-    [_timer invalidate];
-    _timerLabel.hidden = YES;
-}
 
 /*
 #pragma mark - Navigation

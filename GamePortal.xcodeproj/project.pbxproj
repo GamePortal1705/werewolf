@@ -24,6 +24,7 @@
 		515878D11E8B10B40049CECC /* VideoSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 515878D01E8B10B40049CECC /* VideoSession.m */; };
 		515878D41E8B10C00049CECC /* VideoViewLayouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 515878D31E8B10C00049CECC /* VideoViewLayouter.m */; };
 		CAC254001E886E3A00CCABF9 /* GPMsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC253FF1E886E3A00CCABF9 /* GPMsgTableViewCell.m */; };
+		CAD26BF71E8B1D15004C4CAE /* GPHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD26BF61E8B1D15004C4CAE /* GPHeadView.m */; };
 		CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D3D1E7DB36B0066F527 /* main.m */; };
 		CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D401E7DB36B0066F527 /* AppDelegate.m */; };
 		CAFE3D441E7DB36B0066F527 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFE3D431E7DB36B0066F527 /* ViewController.m */; };
@@ -82,6 +83,8 @@
 		C9335ACB42D5D2AF44A15A74 /* Pods_GamePortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamePortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC253FE1E886E3A00CCABF9 /* GPMsgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPMsgTableViewCell.h; sourceTree = "<group>"; };
 		CAC253FF1E886E3A00CCABF9 /* GPMsgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPMsgTableViewCell.m; sourceTree = "<group>"; };
+		CAD26BF51E8B1D15004C4CAE /* GPHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPHeadView.h; sourceTree = "<group>"; };
+		CAD26BF61E8B1D15004C4CAE /* GPHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPHeadView.m; sourceTree = "<group>"; };
 		CAFE3D391E7DB36B0066F527 /* GamePortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAFE3D3D1E7DB36B0066F527 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAFE3D3F1E7DB36B0066F527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				515878D01E8B10B40049CECC /* VideoSession.m */,
 				515878D21E8B10C00049CECC /* VideoViewLayouter.h */,
 				515878D31E8B10C00049CECC /* VideoViewLayouter.m */,
+				CAD26BF51E8B1D15004C4CAE /* GPHeadView.h */,
+				CAD26BF61E8B1D15004C4CAE /* GPHeadView.m */,
 			);
 			path = GamePortal;
 			sourceTree = "<group>";
@@ -322,7 +327,7 @@
 				TargetAttributes = {
 					CAFE3D381E7DB36B0066F527 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 9CHRYF4L2L;
+						DevelopmentTeam = DXLGL27ZQ4;
 						ProvisioningStyle = Automatic;
 					};
 					CAFE3D511E7DB36B0066F527 = {
@@ -535,6 +540,7 @@
 				CAFE3D711E7DC2DF0066F527 /* GameViewController.m in Sources */,
 				515878CE1E8B0B9D0049CECC /* KeyCenter.m in Sources */,
 				CAFE3D441E7DB36B0066F527 /* ViewController.m in Sources */,
+				CAD26BF71E8B1D15004C4CAE /* GPHeadView.m in Sources */,
 				515878D41E8B10C00049CECC /* VideoViewLayouter.m in Sources */,
 				CAFE3D411E7DB36B0066F527 /* AppDelegate.m in Sources */,
 				CAFE3D3E1E7DB36B0066F527 /* main.m in Sources */,
@@ -689,7 +695,7 @@
 			baseConfigurationReference = B6B5E691B81D1349BACBB4ED /* Pods-GamePortal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9CHRYF4L2L;
+				DEVELOPMENT_TEAM = DXLGL27ZQ4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GamePortal",
@@ -707,7 +713,7 @@
 			baseConfigurationReference = 3B196087158554F1E101DE79 /* Pods-GamePortal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9CHRYF4L2L;
+				DEVELOPMENT_TEAM = DXLGL27ZQ4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GamePortal",

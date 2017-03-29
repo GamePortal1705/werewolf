@@ -16,6 +16,7 @@ typedef enum {
     kGameStart,
     kNight,
     kVote,
+    kKill,
     kStatement
 } Stage;
 
@@ -24,7 +25,7 @@ typedef enum {
 @property NSString *username;
 @property Stage stage;
 @property NSString *sessionId;
-@property NSString *role;
+@property long role;
 @property long playerId;
 
 //Video chat
