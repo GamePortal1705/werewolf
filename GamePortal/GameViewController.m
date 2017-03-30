@@ -18,8 +18,12 @@
 #import "FUIButton.h"
 #import "UIFont+FlatUI.h"
 #import "DGActivityIndicatorView.h"
+#import "GPCardView.h"
 
 @interface GameViewController () <AgoraRtcEngineDelegate, UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) NSMutableArray *isAlive;
+
 @property (weak, nonatomic) IBOutlet UIButton *enhancerButton;
 @property (weak, nonatomic) IBOutlet FUIButton *stopStatementBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
@@ -36,10 +40,22 @@
 @property (weak, nonatomic) IBOutlet UIButton *avBox4;
 @property (weak, nonatomic) IBOutlet UIButton *avBox5;
 @property (weak, nonatomic) IBOutlet UIButton *avBox6;
-@property (strong, nonatomic) NSArray *avBoxs;
+@property (strong, nonatomic) NSArray *tmpBoxs;
+@property (strong, nonatomic) NSMutableArray *avBoxs;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic) NSDate *startDateTime;
+
+@property (weak, nonatomic) IBOutlet UIImageView *res1;
+@property (weak, nonatomic) IBOutlet UIImageView *res2;
+@property (weak, nonatomic) IBOutlet UIImageView *res3;
+@property (weak, nonatomic) IBOutlet UIImageView *res4;
+@property (weak, nonatomic) IBOutlet UIImageView *res5;
+@property (weak, nonatomic) IBOutlet UIImageView *res6;
+
+@property (strong, nonatomic) NSArray *tmpRes;
+@property (strong, nonatomic) NSMutableArray *avRes;
+
 
 
 @property (strong, nonatomic) AgoraRtcEngineKit *rtcEngine;
@@ -52,6 +68,9 @@
 @property (strong, nonatomic) VideoViewLayouter *viewLayouter;
 @property (strong, nonatomic) DGActivityIndicatorView *loadingView;
 @property (strong, nonatomic) UILabel *loadingMsg;
+@property (strong, nonatomic) GPHeadView *headView;
+@property (strong, nonatomic) GPCardView *roleCard;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -64,24 +83,26 @@
     self.msgTableView.delegate = self;
     self.msgTableView.dataSource = self;
     self.msgTableView.separatorColor = [UIColor clearColor];
-    NSURL* url = [[NSURL alloc] initWithString:@"http://notebook.sidxiong.me:3000"];
+    NSURL* url = [[NSURL alloc] initWithString:@"http://10.128.9.214:3000"];
     _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @NO, @"forcePolling": @YES}];
     _msgArray = [[NSMutableArray alloc] init];
-    _avBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
+    _tmpBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
+    _tmpRes = [[NSArray alloc] initWithObjects:_res1, _res2, _res3, _res4, _res5, _res6, nil];
     
     self.videoSessions = [[NSMutableArray alloc] init];
     //self.roomNameLabel.text = self.roomName;
     self.backgroundImageView.alpha = 1.0;
     self.roomName = @"ctctct";
     
-    GPHeadView *hv = [[GPHeadView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
-    hv.center = CGPointMake(self.view.frame.size.width/2, 50);
-    [hv rotateImageView];
-    [self.view addSubview:hv];
+    _headView = [[GPHeadView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    _headView.center = CGPointMake(self.view.frame.size.width/2, 50);
+    [_headView rotateImageView];
+    [self.view addSubview:_headView];
     
     _enhanceSwitch = [[FUISwitch alloc] initWithFrame:CGRectMake(10, 400, 60, 30)];
     _enhanceSwitch.onColor = [UIColor turquoiseColor];
     _enhanceSwitch.offColor = [UIColor cloudsColor];
+    [_enhanceSwitch setOn:YES];
     _enhanceSwitch.onBackgroundColor = [UIColor midnightBlueColor];
     _enhanceSwitch.offBackgroundColor = [UIColor silverColor];
     _enhanceSwitch.offLabel.font = [UIFont boldFlatFontOfSize:14];
@@ -90,7 +111,6 @@
     _enhanceSwitch.hidden = YES;
     [_enhanceSwitch addTarget:self action:@selector(changeEnhanceMode) forControlEvents:UIControlEventValueChanged];
     // default behaviour for video chat enhance mode is off.
-    _enhanceSwitch.on = NO;
     
     self.enhancerButton.hidden = YES;
     
@@ -104,7 +124,47 @@
 
     [_stopStatementBtn setHidden:YES];
     
+    //role Card to display the role information of the current player.
+    _roleCard = [[GPCardView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    _roleCard.center = CGPointMake(self.view.center.x, 200);
+    [self.view addSubview:_roleCard];
+    
+    self.timerLabel.textColor = [UIColor whiteColor];
+    
     [self loadAgoraKit];
+    
+    
+    // kvo subroutine
+    [self addObserver:self forKeyPath:@"stage" options:(NSKeyValueChangeNewKey) context:NULL];
+    
+    
+    
+}
+
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSLog(@"KVO");
+    if ([keyPath isEqualToString:@"stage"]) {
+        switch ([[change objectForKey:NSKeyValueChangeNewKey] integerValue]) {
+            case 0:
+                _statusLabel.text = @"state 1";
+                break;
+            case 1:
+                _statusLabel.text = @"state 2";
+                break;
+            case 2:
+                _statusLabel.text = @"state 3";
+                break;
+            case 3:
+                _statusLabel.text = @"state 4";
+                break;
+            case 4:
+                _statusLabel.text = @"state 5";
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -129,7 +189,7 @@
     if (_stage != kVote) {
         _timerLabel.hidden = YES;
     }
-    for (UIButton *box in _avBoxs) {
+    for (UIButton *box in _tmpBoxs) {
         box.layer.cornerRadius = 25;
         [box.layer setMasksToBounds:YES];
         [box.layer setBorderWidth:1.5];
@@ -137,7 +197,13 @@
         box.hidden = YES;
     }
     
-    self.msgTableView.hidden = YES;
+    for (UIImageView *res in _tmpRes) {
+        res.hidden = YES;
+    }
+    
+    _day = 0;
+
+    _statusLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -172,42 +238,46 @@
         _playerId = [rr[@"id"] integerValue];
         NSDictionary *tmp = rr[@"data"];
         _role = [tmp[@"role"] integerValue];
+        _nPlayers = [tmp[@"numOfPlayers"] integerValue];
+        
+        
+        self.roleCard.role = _role;
+        [_roleCard displayRole];
+        [self moveRoleCard];
+        
+        // change status
+        self.isAlive = [NSMutableArray arrayWithCapacity:_nPlayers];
+        
+        for (int idx = 0; idx < _nPlayers; idx ++) {
+            [self.isAlive addObject:[NSNumber numberWithInt:1]];
+        }
+        _statusLabel.hidden = NO;
         
         /* show avatar button with animation */
-        for (UIButton *box in _avBoxs) {
-//            [box removeFromSuperview];
-            box.hidden = NO;
-//            box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
-//            [self.view addSubview:box];
-//            [UIView animateWithDuration:0.3/1.5 animations:^{
-//                box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
-//            } completion:^(BOOL finished) {
-//                [UIView animateWithDuration:0.3/2 animations:^{
-//                    box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
-//                } completion:^(BOOL finished) {
-//                    [UIView animateWithDuration:0.3/2 animations:^{
-//                        box.transform = CGAffineTransformIdentity;
-//                    }];
-//                }];
-//            }];
+        for (int i = 0; i < _nPlayers; i++) {
+            [_avBoxs addObject:[_tmpBoxs objectAtIndex:i]];
+            [_avRes addObject:[_tmpRes objectAtIndex:i]];
+            UIButton* cur = [_tmpBoxs objectAtIndex:i];
+            cur.hidden = NO;
         }
+        
     }];
     
     [_socket on:@"night" callback:^(NSArray* data, SocketAckEmitter* ack) {
         /* get the current night's sequnce number. */
+        _day++;
         self.backgroundImageView.alpha = 1.0;
-        self.msgTableView.backgroundColor = [UIColor redColor];
+        self.msgTableView.backgroundColor = [UIColor blackColor];
         NSString *msg1 = @"Night has come, please close your eyes.";
         NSString *msg2 = @"Wolves please open your eyes, and choose one to kill.";
+        [_headView showNightTime];
         [_msgArray addObject: msg1];
         [_msgArray addObject: msg2];
         [_msgTableView reloadData];
         if (self.role  == 1) {
             self.stage = kKill;
             [self buttonClickEnable];
-            _msgTableView.backgroundColor = [UIColor blueColor];
         } else {
-            _msgTableView.backgroundColor = [UIColor yellowColor];
         }
     }];
     
@@ -223,6 +293,7 @@
     [_socket on:@"vote" callback:^(NSArray* data, SocketAckEmitter* ack) {
         _stage = kVote;
         [self buttonClickEnable];
+        self.backgroundImageView.alpha = 1;
         NSString *votehint = @"Vote begins, please choose one player in 60 secs";
         [_msgArray addObject:votehint];
         [self.msgTableView reloadData];
@@ -230,14 +301,49 @@
     
     [_socket on:@"makeStatement" callback:^(NSArray* data, SocketAckEmitter* ack) {
         self.backgroundImageView.alpha = 0.0;
+        [_headView showDayTime];
         NSDictionary *rr = [data objectAtIndex: 0];
         NSString *un = rr[@"playerName"];
         NSString *uid = rr[@"ID"];
         if ([un isEqualToString:_username]) {
+            [self setupTimer];
             [self startBroadCast];
             [self.stopStatementBtn setHidden:NO];
         }
     }];
+    
+    [_socket on:@"killDecision" callback:^(NSArray * data, SocketAckEmitter * ack) {
+        NSDictionary *rr = [data objectAtIndex: 0];
+        long uid = [rr[@"data"] integerValue];
+        if (uid < 0){
+            NSLog(@"No one get killed");
+        }
+        else{
+            [self.isAlive setObject:[NSNumber numberWithInt:0] atIndexedSubscript:uid];
+            if (uid == _playerId) {
+                //
+            }
+            UIButton *cur = [self.avBoxs objectAtIndex:uid];
+            UIView *tmp = [[UIView alloc] initWithFrame: cur.frame];
+            tmp.backgroundColor = [UIColor redColor];
+            tmp.alpha = 0.5;
+            [self.view addSubview:tmp];
+        }
+    }];
+    
+    [_socket on:@"gameOver" callback:^(NSArray * data, SocketAckEmitter * ack) {
+        // TODO: game over, retry and restart game
+        // list of all playes, who wins 0 : villigers, 1 : wolfs
+        
+    }];
+}
+
+- (void)setupTimer {
+    _timerLabel.hidden = NO;
+    if (![_timer isValid]) {
+        _startDateTime = [NSDate date];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(readTimer) userInfo:nil repeats:YES];
+    }
 }
 
 - (void)buttonClickEnable {
@@ -247,11 +353,7 @@
         for (UIButton *box in self.avBoxs) {
             box.userInteractionEnabled = YES;
         }
-        _timerLabel.hidden = NO;
-        if (![_timer isValid]) {
-            _startDateTime = [NSDate date];
-            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(readTimer) userInfo:nil repeats:YES];
-        }
+        [self setupTimer];
     }
 }
 
@@ -264,6 +366,18 @@
         [_timer invalidate];
         _timerLabel.hidden = YES;
     }
+}
+
+- (void)moveRoleCard {
+    CGAffineTransform translate = CGAffineTransformMakeTranslation((self.view.bounds.size.width / 2 - 20) / 0.4, (self.view.bounds.size.height - 220) / 0.4);
+    CGAffineTransform scale = CGAffineTransformMakeScale(0.4, 0.4);
+    CGAffineTransform transform = CGAffineTransformConcat(translate, scale);
+    
+    [UIView beginAnimations:@"roleCardAnimation" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:2.0];
+    self.roleCard.transform = transform;
+    [UIView commitAnimations];
 }
 
 #pragma mark - TableView Delegate
@@ -403,7 +517,7 @@
 - (IBAction)stopStatement:(id)sender {
     [self stopBroadCast];
     [self.stopStatementBtn setHidden:YES];
-    OnAckCallback *callback = [_socket emitWithAck:@"finishStatement" with:@[@{@"ID": [NSNumber numberWithLong:self.playerId]}]];
+    OnAckCallback *callback = [_socket emitWithAck:@"finishStatement" with:@[@{@"id": [NSNumber numberWithLong:self.playerId]}]];
     [callback timingOutAfter:5.0 callback:^(NSArray* data) {
         /* join game call back do nothing */
         NSLog(@"finishStatement call back");

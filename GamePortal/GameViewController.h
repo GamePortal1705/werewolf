@@ -17,13 +17,16 @@ typedef enum {
     kNight,
     kVote,
     kKill,
-    kStatement
+    kStatement,
+    kGameOver
 } Stage;
 
 @interface GameViewController : UIViewController
 
 @property NSString *username;
 @property Stage stage;
+@property int day;
+@property int nPlayers;
 @property NSString *sessionId;
 @property long role;
 @property long playerId;

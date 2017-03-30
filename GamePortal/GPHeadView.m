@@ -74,4 +74,23 @@
     }];
 }
 
+- (void)showDayTime {
+    [_img removeFromSuperview];
+    _img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 120, 120)];
+    _img.center = CGPointMake(100, 0);
+    _img.layer.cornerRadius = 60;
+    _img.layer.masksToBounds = YES;
+    [_img setImage:[UIImage imageNamed:@"night"]];
+    [self addSubview:_img];
+}
+
+- (void)showNightTime {
+    [_img removeFromSuperview];
+    _img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 120, 120)];
+    _img.center = CGPointMake(100, 0);
+    _img.layer.cornerRadius = 60;
+    _img.layer.masksToBounds = YES;
+    [_img setImage:[UIImage imageNamed:@"day"]];
+    [self addSubview:_img];}
+
 @end

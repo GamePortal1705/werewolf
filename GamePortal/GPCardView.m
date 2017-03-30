@@ -8,7 +8,7 @@
 
 #import "GPCardView.h"
 
-static CGFloat radius = 2;
+static CGFloat radius = 10;
 
 static int shadowOffsetWidth = 0;
 static int shadowOffsetHeight = 3;
@@ -20,7 +20,7 @@ static int shadowOpacity = 0.5;
     self.layer.cornerRadius = radius;
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:radius];
     
-    self.layer.masksToBounds = NO;
+    self.layer.masksToBounds = YES;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOffset = CGSizeMake(shadowOffsetWidth, shadowOffsetHeight);
     self.layer.shadowOpacity = shadowOpacity;
@@ -31,6 +31,24 @@ static int shadowOpacity = 0.5;
     [self addSubview:_imgV];
 }
 
+
+- (void)displayRole {
+    switch (_role) {
+        case 0:
+            [_imgV setImage:[UIImage imageNamed:@"role1"]];
+            break;
+        case 1:
+            [_imgV setImage:[UIImage imageNamed:@"role2"]];
+            break;
+        case 2:
+            [_imgV setImage:[UIImage imageNamed:@"role3"]];
+            break;
+        default:
+            break;
+    }
+    [self setNeedsDisplay];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -38,8 +56,4 @@ static int shadowOpacity = 0.5;
     // Drawing code
 }
 */
-
-- (void)showImage {
-}
-
 @end

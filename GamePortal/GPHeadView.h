@@ -18,4 +18,7 @@
 
 - (void)rotateImageView;
 
+- (void)showDayTime;
+- (void)showNightTime;
+
 @end

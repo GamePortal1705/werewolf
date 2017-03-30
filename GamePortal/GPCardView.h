@@ -11,5 +11,8 @@
 @interface GPCardView : UIView
 
 @property (strong, nonatomic) UIImageView *imgV;
+@property int role;
+
+- (void)displayRole;
 
 @end
