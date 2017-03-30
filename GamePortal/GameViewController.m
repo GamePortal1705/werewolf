@@ -175,21 +175,21 @@
         
         /* show avatar button with animation */
         for (UIButton *box in _avBoxs) {
-            [box removeFromSuperview];
+//            [box removeFromSuperview];
             box.hidden = NO;
-            box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
-            [self.view addSubview:box];
-            [UIView animateWithDuration:0.3/1.5 animations:^{
-                box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.3/2 animations:^{
-                    box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
-                } completion:^(BOOL finished) {
-                    [UIView animateWithDuration:0.3/2 animations:^{
-                        box.transform = CGAffineTransformIdentity;
-                    }];
-                }];
-            }];
+//            box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
+//            [self.view addSubview:box];
+//            [UIView animateWithDuration:0.3/1.5 animations:^{
+//                box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
+//            } completion:^(BOOL finished) {
+//                [UIView animateWithDuration:0.3/2 animations:^{
+//                    box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
+//                } completion:^(BOOL finished) {
+//                    [UIView animateWithDuration:0.3/2 animations:^{
+//                        box.transform = CGAffineTransformIdentity;
+//                    }];
+//                }];
+//            }];
         }
     }];
     
@@ -235,6 +235,7 @@
         NSString *uid = rr[@"ID"];
         if ([un isEqualToString:_username]) {
             [self startBroadCast];
+            [self.stopStatementBtn setHidden:NO];
         }
     }];
 }
@@ -401,6 +402,13 @@
 
 - (IBAction)stopStatement:(id)sender {
     [self stopBroadCast];
+    [self.stopStatementBtn setHidden:YES];
+    OnAckCallback *callback = [_socket emitWithAck:@"finishStatement" with:@[@{@"ID": [NSNumber numberWithLong:self.playerId]}]];
+    [callback timingOutAfter:5.0 callback:^(NSArray* data) {
+        /* join game call back do nothing */
+        NSLog(@"finishStatement call back");
+    }];
+    
 }
 
 - (void)changeEnhanceMode {
