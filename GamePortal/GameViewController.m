@@ -172,6 +172,25 @@
         _playerId = [rr[@"id"] integerValue];
         NSDictionary *tmp = rr[@"data"];
         _role = [tmp[@"role"] integerValue];
+        
+        /* show avatar button with animation */
+        for (UIButton *box in _avBoxs) {
+            [box removeFromSuperview];
+            box.hidden = NO;
+            box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
+            [self.view addSubview:box];
+            [UIView animateWithDuration:0.3/1.5 animations:^{
+                box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.3/2 animations:^{
+                    box.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:0.3/2 animations:^{
+                        box.transform = CGAffineTransformIdentity;
+                    }];
+                }];
+            }];
+        }
     }];
     
     [_socket on:@"night" callback:^(NSArray* data, SocketAckEmitter* ack) {
