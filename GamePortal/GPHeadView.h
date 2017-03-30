@@ -14,5 +14,8 @@
 
 @property (strong, nonatomic) NSString *day;
 @property (strong, nonatomic) NSString *sec;
+@property (strong, nonatomic) UIImageView *img;
+
+- (void)rotateImageView;
 
 @end

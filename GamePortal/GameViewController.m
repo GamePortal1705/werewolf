@@ -76,6 +76,7 @@
     
     GPHeadView *hv = [[GPHeadView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
     hv.center = CGPointMake(self.view.frame.size.width/2, 50);
+    [hv rotateImageView];
     [self.view addSubview:hv];
     
     _enhanceSwitch = [[FUISwitch alloc] initWithFrame:CGRectMake(10, 400, 60, 30)];
@@ -501,6 +502,12 @@
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed {
     VideoSession *userSession = [self videoSessionOfUid:uid];
     [self.rtcEngine setupRemoteVideo:userSession.canvas];
+}
+
+// hide status bar
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 

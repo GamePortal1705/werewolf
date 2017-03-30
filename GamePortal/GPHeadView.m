@@ -51,6 +51,23 @@
     
     [self addSubview:l1];
     [self addSubview:l2];
+    
+    _img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 120, 120)];
+    _img.center = CGPointMake(100, 0);
+    _img.layer.cornerRadius = 60;
+    _img.layer.masksToBounds = YES;
+    [_img setImage:[UIImage imageNamed:@"day_night"]];
+    [self addSubview:_img];
+}
+
+- (void)rotateImageView {
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        [_img setTransform:CGAffineTransformRotate(self.img.transform, M_PI_2)];
+    }completion:^(BOOL finished){
+        if (finished) {
+            [self rotateImageView];
+        }
+    }];
 }
 
 @end
