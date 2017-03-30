@@ -1,21 +1,24 @@
 PODS:
+  - DGActivityIndicatorView (2.1.1)
   - FlatUIKit (1.6.2)
   - pop (1.0.9)
   - QuickBlox (2.6.6)
   - Socket.IO-Client-Swift (8.3.0)
 
 DEPENDENCIES:
+  - DGActivityIndicatorView
   - FlatUIKit
   - pop (~> 1.0)
   - QuickBlox
   - Socket.IO-Client-Swift (~> 8.3.0)
 
 SPEC CHECKSUMS:
+  DGActivityIndicatorView: ff2c76073d79692f724863c8dd38685866a03cb6
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   QuickBlox: 8a860f96d8d4694f9d35fbeac9bbb5bc09ed71ec
   Socket.IO-Client-Swift: 7ad3aded3c0f74d99555e950ac3aa82ca3eefbaf
 
-PODFILE CHECKSUM: 68f6ed08fe71bd98f3733d634ce1a7c003fc0f10
+PODFILE CHECKSUM: e90a20f2a494a2ea1feb1749c5c845efa49d3a9d
 
 COCOAPODS: 1.2.0

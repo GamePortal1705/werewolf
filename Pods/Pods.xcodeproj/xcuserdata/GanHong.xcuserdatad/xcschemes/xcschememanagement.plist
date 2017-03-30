@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DGActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FlatUIKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1313A208E1BCC6A3CF75E569B3CECF36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32B9A05C51B4C95616BA30B01DFFC65E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3814077B60A225441E135CD435F07186</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44C6B7180E8D46594F334C12AE034704</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>617BF5CAE6015D15FBEC35CB26D87586</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>77C8A74D1D6CBC26821760B380909C6E</key>
+		<key>97677FD8190473E70D85D9BD83BB34F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -58,11 +73,6 @@
 			<true/>
 		</dict>
 		<key>F1AF68F71B2B9051F8BDD60EAC9CD1B5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE564141DD6CCE1D5C4ACCA6A32088C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

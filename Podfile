@@ -9,6 +9,7 @@ pod 'QuickBlox'
 pod 'Socket.IO-Client-Swift', '~> 8.3.0' # Or latest version
 pod 'pop', '~> 1.0'
 pod 'FlatUIKit'
+pod 'DGActivityIndicatorView'
 end
 
 target 'GamePortalTests' do

@@ -60,6 +60,10 @@
     [self addSubview:_img];
 }
 
+- (void)layoutSubviews {
+    
+}
+
 - (void)rotateImageView {
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         [_img setTransform:CGAffineTransformRotate(self.img.transform, M_PI_2)];

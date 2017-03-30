@@ -17,6 +17,7 @@
 #import "UIColor+FlatUI.h"
 #import "FUIButton.h"
 #import "UIFont+FlatUI.h"
+#import "DGActivityIndicatorView.h"
 
 @interface GameViewController () <AgoraRtcEngineDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIButton *enhancerButton;
@@ -41,7 +42,6 @@
 @property (strong, nonatomic) NSDate *startDateTime;
 
 
-
 @property (strong, nonatomic) AgoraRtcEngineKit *rtcEngine;
 @property (strong, nonatomic) AgoraYuvEnhancerObjc *agoraEnhancer;
 @property (assign, nonatomic) BOOL isBroadcaster;
@@ -50,8 +50,8 @@
 @property (strong, nonatomic) NSMutableArray<VideoSession *> *videoSessions;
 @property (strong, nonatomic) VideoSession *fullSession;
 @property (strong, nonatomic) VideoViewLayouter *viewLayouter;
-
-
+@property (strong, nonatomic) DGActivityIndicatorView *loadingView;
+@property (strong, nonatomic) UILabel *loadingMsg;
 
 @end
 
@@ -92,6 +92,8 @@
     // default behaviour for video chat enhance mode is off.
     _enhanceSwitch.on = NO;
     
+    self.enhancerButton.hidden = YES;
+    
     _stopStatementBtn.buttonColor = [UIColor redColor];
     _stopStatementBtn.shadowColor = [UIColor redColor];
     _stopStatementBtn.shadowHeight = 3.0f;
@@ -110,6 +112,20 @@
     [super viewWillAppear:animated];
     [self setupSocket];
     [_socket connect];
+    
+    _loadingView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor whiteColor] size:80.0f];
+    _loadingView.frame = CGRectMake(0.0f, 0.0f, 200.0f, 200.0f);
+    _loadingView.center = self.view.center;
+    [self.view addSubview:_loadingView];
+    [_loadingView startAnimating];
+    
+    _loadingMsg = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 240, 80)];
+    _loadingMsg.center = CGPointMake(self.view.center.x, self.view.center.y + 50.0f);
+    _loadingMsg.text = @"Waiting for other people to join the game";
+    [_loadingMsg setTextColor:[UIColor whiteColor]];
+    [_loadingMsg setAdjustsFontSizeToFitWidth:YES];
+    [self.view addSubview:_loadingMsg];
+    
     if (_stage != kVote) {
         _timerLabel.hidden = YES;
     }
@@ -118,7 +134,10 @@
         [box.layer setMasksToBounds:YES];
         [box.layer setBorderWidth:1.5];
         box.userInteractionEnabled = NO;
+        box.hidden = YES;
     }
+    
+    self.msgTableView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,6 +162,10 @@
     [_socket on:@"dispatchRole" callback:^(NSArray * data, SocketAckEmitter * ack) {
         /* user got its rule, game is starting. */
         [self setStage: kGameStart];
+        /* stop the loading view */
+        [_loadingView stopAnimating];
+        [_loadingView removeFromSuperview];
+        [_loadingMsg removeFromSuperview];
         /* get role information. */
         NSDictionary *rr = [data objectAtIndex:0];
         _sessionId = rr[@"sessionId"];
