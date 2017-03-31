@@ -133,7 +133,6 @@
     
     [self loadAgoraKit];
     
-    
     // kvo subroutine
     [self addObserver:self forKeyPath:@"stage" options:(NSKeyValueChangeNewKey) context:NULL];
 }
@@ -492,7 +491,8 @@
     } else {
         [self.agoraEnhancer turnOff];
     }
-    [self.enhancerButton setImage:[UIImage imageNamed:(shouldEnhancer ? @"btn_beautiful_cancel" : @"btn_beautiful")] forState:UIControlStateNormal];
+    
+    //[self.enhancerButton setImage:[UIImage imageNamed:(shouldEnhancer ? @"btn_beautiful_cancel" : @"btn_beautiful")] forState:UIControlStateNormal];
 }
 
 - (void)setVideoSessions:(NSMutableArray<VideoSession *> *)videoSessions {
@@ -666,6 +666,34 @@
     VideoSession *userSession = [self videoSessionOfUid:uid];
     [self.rtcEngine setupRemoteVideo:userSession.canvas];
 }
+
+
+- (void)rtcEngine:(AgoraRtcEngineKit *)engine firstLocalVideoFrameWithSize:(CGSize)size elapsed:(NSInteger)elapsed {
+    if (self.videoSessions.count) {
+        [self updateInterfaceWithAnimation:NO];
+    }
+}
+
+- (void)rtcEngine:(AgoraRtcEngineKit *)engine didOfflineOfUid:(NSUInteger)uid reason:(AgoraRtcUserOfflineReason)reason {
+    VideoSession *deleteSession;
+    for (VideoSession *session in self.videoSessions) {
+        if (session.uid == uid) {
+            deleteSession = session;
+        }
+    }
+    
+    if (deleteSession) {
+        [self.videoSessions removeObject:deleteSession];
+        [deleteSession.hostingView removeFromSuperview];
+        [self updateInterfaceWithAnimation:YES];
+        
+        if (deleteSession == self.fullSession) {
+            self.fullSession = nil;
+        }
+    }
+}
+
+
 
 // hide status bar
 
