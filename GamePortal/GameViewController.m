@@ -40,7 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *avBox4;
 @property (weak, nonatomic) IBOutlet UIButton *avBox5;
 @property (weak, nonatomic) IBOutlet UIButton *avBox6;
-@property (strong, nonatomic) NSArray *tmpBoxs;
+//@property (strong, nonatomic) NSMutableArray *tmpBoxs;
 @property (strong, nonatomic) NSMutableArray *avBoxs;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) NSTimer *timer;
@@ -53,7 +53,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *res5;
 @property (weak, nonatomic) IBOutlet UIImageView *res6;
 
-@property (strong, nonatomic) NSArray *tmpRes;
+//@property (strong, nonatomic) NSMutableArray *tmpRes;
 @property (strong, nonatomic) NSMutableArray *avRes;
 
 
@@ -86,8 +86,8 @@
     NSURL* url = [[NSURL alloc] initWithString:@"http://10.128.9.214:3000"];
     _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @NO, @"forcePolling": @YES}];
     _msgArray = [[NSMutableArray alloc] init];
-    _tmpBoxs = [[NSArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
-    _tmpRes = [[NSArray alloc] initWithObjects:_res1, _res2, _res3, _res4, _res5, _res6, nil];
+    _avBoxs = [[NSMutableArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
+    _avRes = [[NSMutableArray alloc] initWithObjects:_res1, _res2, _res3, _res4, _res5, _res6, nil];
     
     self.videoSessions = [[NSMutableArray alloc] init];
     //self.roomNameLabel.text = self.roomName;
@@ -136,9 +136,6 @@
     
     // kvo subroutine
     [self addObserver:self forKeyPath:@"stage" options:(NSKeyValueChangeNewKey) context:NULL];
-    
-    
-    
 }
 
 
@@ -189,7 +186,7 @@
     if (_stage != kVote) {
         _timerLabel.hidden = YES;
     }
-    for (UIButton *box in _tmpBoxs) {
+    for (UIButton *box in _avBoxs) {
         box.layer.cornerRadius = 25;
         [box.layer setMasksToBounds:YES];
         [box.layer setBorderWidth:1.5];
@@ -197,7 +194,7 @@
         box.hidden = YES;
     }
     
-    for (UIImageView *res in _tmpRes) {
+    for (UIImageView *res in _avRes) {
         res.hidden = YES;
     }
     
@@ -253,11 +250,11 @@
         }
         _statusLabel.hidden = NO;
         
+        [_avBoxs removeObjectsInRange:NSMakeRange(_nPlayers, _avBoxs.count - _nPlayers)];
+        [_avRes removeObjectsInRange:NSMakeRange(_nPlayers, _avRes.count - _nPlayers)];
         /* show avatar button with animation */
         for (int i = 0; i < _nPlayers; i++) {
-            [_avBoxs addObject:[_tmpBoxs objectAtIndex:i]];
-            [_avRes addObject:[_tmpRes objectAtIndex:i]];
-            UIButton* cur = [_tmpBoxs objectAtIndex:i];
+            UIButton* cur = [_avBoxs objectAtIndex:i];
             cur.hidden = NO;
         }
         
@@ -300,6 +297,7 @@
     }];
     
     [_socket on:@"makeStatement" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        [self stopBroadCast];
         self.backgroundImageView.alpha = 0.0;
         [_headView showDayTime];
         NSDictionary *rr = [data objectAtIndex: 0];
@@ -310,6 +308,7 @@
             [self startBroadCast];
             [self.stopStatementBtn setHidden:NO];
         }
+        [self updateInterfaceWithAnimation:YES];
     }];
     
     [_socket on:@"killDecision" callback:^(NSArray * data, SocketAckEmitter * ack) {
@@ -334,7 +333,7 @@
     [_socket on:@"gameOver" callback:^(NSArray * data, SocketAckEmitter * ack) {
         // TODO: game over, retry and restart game
         // list of all playes, who wins 0 : villigers, 1 : wolfs
-        
+        NSLog(@"game over");
     }];
 }
 
