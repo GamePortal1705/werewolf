@@ -71,6 +71,7 @@
 @property (strong, nonatomic) GPHeadView *headView;
 @property (strong, nonatomic) GPCardView *roleCard;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *resLabel;
 
 @end
 
@@ -80,10 +81,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.resLabel.hidden = YES;
     self.msgTableView.delegate = self;
     self.msgTableView.dataSource = self;
     self.msgTableView.separatorColor = [UIColor clearColor];
-    NSURL* url = [[NSURL alloc] initWithString:@"http://10.128.9.214:3000"];
+    NSURL* url = [[NSURL alloc] initWithString:@"http://notebook.sidxiong.me:3000"];
     _socket = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log": @NO, @"forcePolling": @YES}];
     _msgArray = [[NSMutableArray alloc] init];
     _avBoxs = [[NSMutableArray alloc] initWithObjects: _avBox1, _avBox2, _avBox3, _avBox4, _avBox5, _avBox6, nil];
@@ -164,6 +166,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    _statusLabel.hidden = YES;
+    
     //_enhancerButton.hidden = YES;
     [super viewWillAppear:animated];
     [self setupSocket];
@@ -297,6 +301,7 @@
     
     [_socket on:@"makeStatement" callback:^(NSArray* data, SocketAckEmitter* ack) {
         [self stopBroadCast];
+        NSLog(@"Make Statement!");
         self.backgroundImageView.alpha = 0.0;
         [_headView showDayTime];
         NSDictionary *rr = [data objectAtIndex: 0];
@@ -333,6 +338,32 @@
         // TODO: game over, retry and restart game
         // list of all playes, who wins 0 : villigers, 1 : wolfs
         NSLog(@"game over");
+        NSDictionary* ddate2 = [data objectAtIndex: 0];
+        NSDictionary* ddate = [ddate2 objectForKey:@"data"];
+        NSArray* players = [ddate objectForKey:@"players"];
+        for (int i = 0; i < [players count]; i++) {
+            NSDictionary *tmp = [players objectAtIndex:i];
+            long role = [tmp[@"role"] integerValue];
+            if (role == 0) {
+                UIImageView *ktmp = [_avRes objectAtIndex:i];
+                ktmp.hidden = NO;
+                [ktmp setImage:[UIImage imageNamed:@"role1"]];
+                [ktmp setNeedsDisplay];
+            } else {
+                UIImageView *ktmp = [_avRes objectAtIndex:i];
+                ktmp.hidden = NO;
+                [ktmp setImage:[UIImage imageNamed:@"role2"]];
+                [ktmp setNeedsDisplay];
+            }
+        }
+        long res = [[ddate objectForKey:@"winner"] integerValue];
+        if (res == _role) {
+            self.resLabel.text = @"YOU WIN!";
+        } else {
+            self.resLabel.text = @"YOU LOSE";
+        }
+        self.resLabel.adjustsFontSizeToFitWidth = YES;
+        self.resLabel.hidden = NO;
     }];
 }
 
