@@ -36,7 +36,7 @@
     _launchBtn.shadowColor = [UIColor greenSeaColor];
     _launchBtn.shadowHeight = 3.0f;
     _launchBtn.cornerRadius = 6.0f;
-    _launchBtn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    //_launchBtn.titleLabel.font = [UIFont boldFlatFontOfSize:16];
     [_launchBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [_launchBtn setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     

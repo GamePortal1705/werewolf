@@ -40,7 +40,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *avBox4;
 @property (weak, nonatomic) IBOutlet UIButton *avBox5;
 @property (weak, nonatomic) IBOutlet UIButton *avBox6;
-//@property (strong, nonatomic) NSMutableArray *tmpBoxs;
 @property (strong, nonatomic) NSMutableArray *avBoxs;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) NSTimer *timer;
@@ -53,10 +52,14 @@
 @property (weak, nonatomic) IBOutlet UIImageView *res5;
 @property (weak, nonatomic) IBOutlet UIImageView *res6;
 
-//@property (strong, nonatomic) NSMutableArray *tmpRes;
 @property (strong, nonatomic) NSMutableArray *avRes;
 
 
+// demo tmp stuff
+@property (weak, nonatomic) IBOutlet UILabel *l1;
+@property (weak, nonatomic) IBOutlet UILabel *l2;
+@property (weak, nonatomic) IBOutlet UILabel *l3;
+@property (weak, nonatomic) IBOutlet UILabel *l4;
 
 @property (strong, nonatomic) AgoraRtcEngineKit *rtcEngine;
 @property (strong, nonatomic) AgoraYuvEnhancerObjc *agoraEnhancer;
@@ -167,7 +170,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     _statusLabel.hidden = YES;
-    
     //_enhancerButton.hidden = YES;
     [super viewWillAppear:animated];
     [self setupSocket];
@@ -179,9 +181,10 @@
     [self.view addSubview:_loadingView];
     [_loadingView startAnimating];
     
-    _loadingMsg = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 240, 80)];
+    _loadingMsg = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 80)];
     _loadingMsg.center = CGPointMake(self.view.center.x, self.view.center.y + 50.0f);
-    _loadingMsg.text = @"Waiting for other people to join the game";
+    _loadingMsg.text = @"Waiting for other players";
+    [_loadingMsg setFont:[UIFont fontWithName:@"Chalkduster" size:25]];
     [_loadingMsg setTextColor:[UIColor whiteColor]];
     [_loadingMsg setAdjustsFontSizeToFitWidth:YES];
     [self.view addSubview:_loadingMsg];
@@ -204,6 +207,22 @@
     _day = 0;
 
     _statusLabel.hidden = YES;
+    [self hideScore];
+}
+
+- (void)hideScore {
+    _l1.hidden = YES;
+    _l2.hidden = YES;
+    _l3.hidden = YES;
+    _l4.hidden = YES;
+}
+
+
+- (void)showScore {
+    _l1.hidden = NO;
+    _l2.hidden = NO;
+    _l3.hidden = NO;
+    _l4.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -251,7 +270,7 @@
         for (int idx = 0; idx < _nPlayers; idx ++) {
             [self.isAlive addObject:[NSNumber numberWithInt:1]];
         }
-        _statusLabel.hidden = NO;
+        _statusLabel.hidden = YES;
         
         [_avBoxs removeObjectsInRange:NSMakeRange(_nPlayers, _avBoxs.count - _nPlayers)];
         [_avRes removeObjectsInRange:NSMakeRange(_nPlayers, _avRes.count - _nPlayers)];
@@ -363,7 +382,9 @@
             self.resLabel.text = @"YOU LOSE";
         }
         self.resLabel.adjustsFontSizeToFitWidth = YES;
+        [self.resLabel setFont:[UIFont fontWithName:@"Chalkduster" size:25]];
         self.resLabel.hidden = NO;
+        [self showScore];
     }];
 }
 
