@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [_msg setFont:[UIFont fontWithName:@"Chalkduster" size:16]];
+    [_msg setFont:[UIFont fontWithName:@"Courier New-Bold" size:16]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

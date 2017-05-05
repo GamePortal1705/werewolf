@@ -83,6 +83,7 @@
 //Video Chat
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.resLabel.hidden = YES;
     self.msgTableView.delegate = self;
@@ -118,6 +119,12 @@
     // default behaviour for video chat enhance mode is off.
     
     self.enhancerButton.hidden = YES;
+    
+    // msgTableView setting
+    self.msgTableView.hidden = YES;
+    self.msgTableView.rowHeight = UITableViewAutomaticDimension;
+    self.msgTableView.estimatedRowHeight = 100;
+    
     
     _stopStatementBtn.buttonColor = [UIColor redColor];
     _stopStatementBtn.shadowColor = [UIColor redColor];
@@ -184,7 +191,8 @@
     _loadingMsg = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 80)];
     _loadingMsg.center = CGPointMake(self.view.center.x, self.view.center.y + 50.0f);
     _loadingMsg.text = @"Waiting for other players";
-    [_loadingMsg setFont:[UIFont fontWithName:@"Chalkduster" size:25]];
+    [_loadingMsg setFont:[UIFont fontWithName:@"Courier New-Bold" size:25]];
+    [_loadingMsg setTextAlignment:NSTextAlignmentCenter];
     [_loadingMsg setTextColor:[UIColor whiteColor]];
     [_loadingMsg setAdjustsFontSizeToFitWidth:YES];
     [self.view addSubview:_loadingMsg];
@@ -279,6 +287,8 @@
             UIButton* cur = [_avBoxs objectAtIndex:i];
             cur.hidden = NO;
         }
+        
+        self.msgTableView.hidden = NO;
         
     }];
     
@@ -432,7 +442,7 @@
 
 #pragma mark - TableView Delegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 30;
 }
 
@@ -452,7 +462,6 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.msg.text = [self.msgArray objectAtIndex:indexPath.row];
-    cell.msg.adjustsFontSizeToFitWidth = YES;
     return cell;
 }
 
