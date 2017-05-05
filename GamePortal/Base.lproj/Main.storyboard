@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_load" translatesAutoresizingMaskIntoConstraints="NO" id="lL8-r1-mjy">
-                                <rect key="frame" x="0.0" y="172" width="375" height="495"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dcu-bX-Zid">
                                 <rect key="frame" x="67" y="43" width="240" height="128"/>
@@ -75,7 +75,7 @@
                             <constraint firstItem="r3v-cg-uXl" firstAttribute="top" secondItem="b2o-tZ-p1n" secondAttribute="bottom" constant="21" id="EUY-eD-EWS"/>
                             <constraint firstItem="lL8-r1-mjy" firstAttribute="centerX" secondItem="b2o-tZ-p1n" secondAttribute="centerX" id="JQ5-RZ-uhe"/>
                             <constraint firstItem="dcu-bX-Zid" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="Jsx-zR-Rvo"/>
-                            <constraint firstItem="lL8-r1-mjy" firstAttribute="top" secondItem="dcu-bX-Zid" secondAttribute="bottom" constant="1" id="Qao-qF-m90"/>
+                            <constraint firstItem="lL8-r1-mjy" firstAttribute="top" secondItem="dcu-bX-Zid" secondAttribute="bottom" constant="-171" id="Qao-qF-m90"/>
                             <constraint firstItem="lL8-r1-mjy" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="SEh-kk-hKi"/>
                             <constraint firstItem="b2o-tZ-p1n" firstAttribute="top" secondItem="dcu-bX-Zid" secondAttribute="bottom" constant="50" id="V01-lx-Rzc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dcu-bX-Zid" secondAttribute="trailing" constant="52" id="cng-L5-hIj"/>
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1522" y="-79"/>
+            <point key="canvasLocation" x="-1522.4000000000001" y="-79.610194902548727"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="06O-AO-f3V">
@@ -463,7 +463,7 @@
     <resources>
         <image name="Maximillian_Kaye_SUMMER2017_photo" width="303" height="300"/>
         <image name="bg1" width="876" height="1492"/>
-        <image name="bg_load" width="900" height="1020"/>
+        <image name="bg_load" width="750" height="1334"/>
         <image name="clogo" width="1072" height="436"/>
         <image name="david" width="160" height="160"/>
         <image name="download" width="251" height="201"/>

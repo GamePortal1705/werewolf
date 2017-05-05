@@ -29,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @property (strong, nonatomic) FUISwitch *enhanceSwitch;
+@property (strong, nonatomic) FUISwitch *muteSwitch;
+
 
 @property (weak, nonatomic) IBOutlet UIView *remoteContainerView;
 @property (strong, nonatomic) SocketIOClient *socket;
@@ -66,6 +68,7 @@
 @property (assign, nonatomic) BOOL isBroadcaster;
 @property (assign, nonatomic) BOOL isMuted;
 @property (assign, nonatomic) BOOL shouldEnhancer;
+@property (assign, nonatomic) BOOL shouldMute;
 @property (strong, nonatomic) NSMutableArray<VideoSession *> *videoSessions;
 @property (strong, nonatomic) VideoSession *fullSession;
 @property (strong, nonatomic) VideoViewLayouter *viewLayouter;
@@ -116,6 +119,20 @@
     [self.view addSubview:_enhanceSwitch];
     _enhanceSwitch.hidden = YES;
     [_enhanceSwitch addTarget:self action:@selector(changeEnhanceMode) forControlEvents:UIControlEventValueChanged];
+    
+    
+    _muteSwitch = [[FUISwitch alloc] initWithFrame:CGRectMake(10, 450, 60, 30)];
+    _muteSwitch.onColor = [UIColor turquoiseColor];
+    _muteSwitch.offColor = [UIColor cloudsColor];
+    [_muteSwitch setOn:NO];
+    _muteSwitch.onBackgroundColor = [UIColor midnightBlueColor];
+    _muteSwitch.offBackgroundColor = [UIColor silverColor];
+    _muteSwitch.offLabel.font = [UIFont boldFlatFontOfSize:14];
+    _muteSwitch.onLabel.font = [UIFont boldFlatFontOfSize:14];
+    [self.view addSubview:_muteSwitch];
+    _muteSwitch.hidden = YES;
+    [_muteSwitch addTarget:self action:@selector(changeMuteMode) forControlEvents:UIControlEventValueChanged];
+    
     // default behaviour for video chat enhance mode is off.
     
     self.enhancerButton.hidden = YES;
@@ -509,6 +526,7 @@
 
 - (void)startBroadCast{
     _enhanceSwitch.hidden = NO;
+    _muteSwitch.hidden = NO;
     self.clientRole = AgoraRtc_ClientRole_Broadcaster;
     [self.rtcEngine setClientRole:self.clientRole withKey:nil];
     [self updateInterfaceWithAnimation:YES];
@@ -516,6 +534,7 @@
 
 - (void)stopBroadCast{
     _enhanceSwitch.hidden = YES;
+    _muteSwitch.hidden = YES;
     self.clientRole = AgoraRtc_ClientRole_Audience;
     if (self.fullSession.uid == 0) {
         self.fullSession = nil;
@@ -535,13 +554,14 @@
     
     if (self.isBroadcaster) {
         self.shouldEnhancer = YES;
+        self.shouldMute = NO;
     }
     //[self updateButtonsVisiablity];
 }
 
-- (void)setIsMuted:(BOOL)isMuted {
-    _isMuted = isMuted;
-    [self.rtcEngine muteLocalAudioStream:isMuted];
+- (void)setShouldMute:(BOOL)shouldMute{
+    _shouldMute = shouldMute;
+    [self.rtcEngine muteLocalAudioStream:shouldMute];
     //[self.audioMuteButton setImage:[UIImage imageNamed:(isMuted ? @"btn_mute_cancel" : @"btn_mute")] forState:UIControlStateNormal];
 }
 
@@ -583,6 +603,10 @@
         NSLog(@"finishStatement call back");
     }];
     
+}
+
+- (void)changeMuteMode {
+    self.shouldMute = !self.shouldMute;
 }
 
 - (void)changeEnhanceMode {

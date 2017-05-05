@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DGActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>FlatUIKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-GamePortal.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -24,9 +34,29 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1313A208E1BCC6A3CF75E569B3CECF36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32B9A05C51B4C95616BA30B01DFFC65E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3814077B60A225441E135CD435F07186</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44C6B7180E8D46594F334C12AE034704</key>
 		<dict>
 			<key>primary</key>
@@ -37,7 +67,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>97677FD8190473E70D85D9BD83BB34F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CC44BD12C62B64B5EB9366C3B31863A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D88D87F9C08CC6014A19D5865226133B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
